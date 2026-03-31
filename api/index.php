@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Yasmina</title>
+
     <style>
         * {
             margin: 0;
@@ -38,6 +39,16 @@
         .hero {
             text-align: center;
             padding: 50px 20px;
+        }
+
+        /* IMAGE PROFIL */
+        .hero img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #6c5ce7;
         }
 
         .hero h1 {
@@ -102,6 +113,11 @@
             .hero h1 {
                 font-size: 1.8em;
             }
+
+            .hero img {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
@@ -118,6 +134,9 @@
 </header>
 
 <section class="hero">
+    <!-- IMAGE -->
+    <img src="me.png" alt="Photo Yasmina">
+
     <h1>Bienvenue sur mon portfolio 👋</h1>
     <p>Je suis Yasmina, stagiaire en développement web. Voici mes ateliers PHP.</p>
 </section>
