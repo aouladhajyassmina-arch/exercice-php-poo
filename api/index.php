@@ -208,6 +208,7 @@ footer {
         <a href="#">Accueil</a>
         <a href="#projects">Ateliers PHP</a>
         <a href="#">Contact</a>
+        <a href="Portfolio.html">Mes projectes</a>
     </nav>
 </header>
 
