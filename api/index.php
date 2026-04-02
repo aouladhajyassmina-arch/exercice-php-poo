@@ -19,7 +19,7 @@
         }
 
         header {
-            background: #6c5ce7;
+            background: #eb87da;
             color: white;
             padding: 20px;
             text-align: center;
@@ -48,7 +48,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
-            border: 4px solid #6c5ce7;
+            border: 4px solid #eb87da;
         }
 
         .hero h1 {
@@ -95,7 +95,7 @@
         .card a {
             display: inline-block;
             margin-top: 10px;
-            color: #6c5ce7;
+            color: #eb87da;
             text-decoration: none;
             font-weight: bold;
         }
@@ -103,7 +103,7 @@
         footer {
             text-align: center;
             padding: 20px;
-            background: #2d3436;
+            background: #eb87da;
             color: white;
             margin-top: 30px;
         }
