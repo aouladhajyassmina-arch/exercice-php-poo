@@ -119,6 +119,84 @@
                 height: 120px;
             }
         }
+        .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project img {
+  width: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.project:hover .overlay {
+  opacity: 1;
+}
+
+.overlay a {
+  color: white;
+  margin-top: 10px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: var(--text);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
+.imgpr{
+    width: 70px;
+    height: 120px;
+}
     </style>
 </head>
 <body>
@@ -170,6 +248,35 @@
         </div>
     </div>
 </section>
+     <section id="projects" class="section reveal">
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+      <div class="project">
+        <img src="c:\Users\pc\Downloads\Elegant Modern Beauty Online Store Design.jfif" alt="">
+        <div class="overlay">
+          <h3>Project One</h3>
+          <a href="#" target="_blank">Preview</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="c:\Users\pc\Downloads\Coffee UI site.jfif" alt="">
+        <div class="overlay">
+          <h3>Project Two</h3>
+          <a href="#" target="_blank">Preview</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="c:\Users\pc\Downloads\Patisserie – Elegant & Romantic Landing Page Design 🎂.jfif" alt="">
+        <div class="overlay">
+          <h3>Project Three</h3>
+          <a href="#" target="_blank">Preview</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <footer>
     <p>© 2026 Yasmina - Portfolio</p>
