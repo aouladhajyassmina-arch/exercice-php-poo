@@ -148,13 +148,13 @@
         <div class="card">
             <h3>Atelier 1</h3>
             <p>Introduction au PHP</p>
-            <a href="seance1_ex2_triangle_etoile.php">exercice 1</a>
+            <a href="seance1_ex1.php">exercice 1</a>
         </div>
 
         <div class="card">
             <h3>Atelier 2</h3>
             <p>Formulaires en PHP</p>
-            <a href="#">Voir plus</a>
+            <a href="seance1_ex2_etoile.php">exercice 2</a>
         </div>
 
         <div class="card">
