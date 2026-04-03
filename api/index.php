@@ -239,13 +239,14 @@ footer {
         <div class="card">
             <h3>Atelier 3</h3>
             <p>Connexion base de données</p>
-            <a href="#">Voir plus</a>
+            <a href="DOCTYPE html.pdf">pdf exercice 1</a>
         </div>
 
         <div class="card">
             <h3>Atelier 4</h3>
             <p>CRUD en PHP</p>
-            <a href="#">Voir plus</a>
+            <a href="DOCTYPE 2 html.pdf">pdf exercice 2</a>
+            
         </div>
     </div>
 </section>
