@@ -48,7 +48,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
-            border: 4px solid #eb87da;
+            border: 4px solid #e884c8;
         }
 
         .hero h1 {
@@ -95,7 +95,7 @@
         .card a {
             display: inline-block;
             margin-top: 10px;
-            color: #eb87da;
+            color: #e187db;
             text-decoration: none;
             font-weight: bold;
         }
@@ -103,7 +103,7 @@
         footer {
             text-align: center;
             padding: 20px;
-            background: #eb87da;
+            background: #2d3436;
             color: white;
             margin-top: 30px;
         }
@@ -119,84 +119,6 @@
                 height: 120px;
             }
         }
-        .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.project {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.project img {
-  width: 100%;
-  display: block;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: 0.3s;
-}
-
-.project:hover .overlay {
-  opacity: 1;
-}
-
-.overlay a {
-  color: white;
-  margin-top: 10px;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 12px;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-}
-
-.socials a {
-  margin: 0 10px;
-  color: var(--text);
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.6s;
-}
-
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-}
-.imgpr{
-    width: 70px;
-    height: 120px;
-}
     </style>
 </head>
 <body>
@@ -208,7 +130,6 @@ footer {
         <a href="#">Accueil</a>
         <a href="#projects">Ateliers PHP</a>
         <a href="#">Contact</a>
-        <a href="Portfolio.html">Mes projectes</a>
     </nav>
 </header>
 
@@ -227,58 +148,28 @@ footer {
         <div class="card">
             <h3>Atelier 1</h3>
             <p>Introduction au PHP</p>
-            <a href="seance1_ex1.php">exercice 1</a>
+            <a href="seance1_ex2_etoile.php">exercice 1</a>
         </div>
 
         <div class="card">
             <h3>Atelier 2</h3>
             <p>Formulaires en PHP</p>
-            <a href="seance1_ex2_etoile.php">exercice 2</a>
+            <a href="seance1_ex1.php">exercice 2</a>
         </div>
 
         <div class="card">
             <h3>Atelier 3</h3>
             <p>Connexion base de données</p>
-            <a href="DOCTYPE html.pdf">pdf exercice 1</a>
+            <a href="/r1.pdf">pdf exercice 1</a>
         </div>
 
         <div class="card">
             <h3>Atelier 4</h3>
             <p>CRUD en PHP</p>
-            <a href="DOCTYPE 2 html.pdf">pdf exercice 2</a>
-            
+            <a href="/r2.pdf">pdf exercice 2</a>
         </div>
     </div>
 </section>
-     <section id="projects" class="section reveal">
-    <h2>Projects</h2>
-
-    <div class="projects-grid">
-      <div class="project">
-        <img src="c:\Users\pc\Downloads\Elegant Modern Beauty Online Store Design.jfif" alt="">
-        <div class="overlay">
-          <h3>Project One</h3>
-          <a href="#" target="_blank">Preview</a>
-        </div>
-      </div>
-
-      <div class="project">
-        <img src="c:\Users\pc\Downloads\Coffee UI site.jfif" alt="">
-        <div class="overlay">
-          <h3>Project Two</h3>
-          <a href="#" target="_blank">Preview</a>
-        </div>
-      </div>
-
-      <div class="project">
-        <img src="c:\Users\pc\Downloads\Patisserie – Elegant & Romantic Landing Page Design 🎂.jfif" alt="">
-        <div class="overlay">
-          <h3>Project Three</h3>
-          <a href="#" target="_blank">Preview</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
 <footer>
     <p>© 2026 Yasmina - Portfolio</p>
