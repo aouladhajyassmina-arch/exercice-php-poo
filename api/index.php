@@ -119,6 +119,58 @@
                 height: 120px;
             }
         }
+        .buttons {
+    text-align: center;
+    margin: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background: #e98ae9;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    background: #e056fd;
+}
+
+/* PROJECTS */
+.projects {
+    padding: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card a {
+    display: block;
+    margin-top: 10px;
+    color: #ea9ad9;
+    font-weight: bold;
+    text-decoration: none;
+}
+
     </style>
 </head>
 <body>
@@ -144,30 +196,41 @@
 <section class="projects" id="projects">
     <h2>Mes Ateliers PHP</h2>
 
+    <div class="buttons">
+    <button onclick="showAtelier(1)">Atelier 1</button>
+    <button onclick="showAtelier(2)">Atelier 2</button>
+</div>
+
+<!-- PROJECTS -->
+<section class="projects">
     <div class="grid">
-        <div class="card">
-            <h3>Atelier 1</h3>
-            <p>Introduction au PHP</p>
-            <a href="seance1_ex2_etoile.php">exercice 1</a>
+
+        <!-- ATELIER 1 -->
+        <div class="card atelier1">
+            <h3>Exercice 1</h3>
+            <a href="seance1_ex2_etoile.php">Voir exercice</a>
+            <a href="r1.pdf">Voir rapport</a>
         </div>
 
-        <div class="card">
-            <h3>Atelier 2</h3>
-            <p>Formulaires en PHP</p>
-            <a href="seance1_ex1.php">exercice 2</a>
+        <div class="card atelier1">
+            <h3>Exercice 2</h3>
+            <a href="seance1_ex1.php">Voir exercice</a>
+            <a href="r2.pdf">Voir rapport</a>
         </div>
 
-        <div class="card">
-            <h3>Atelier 3</h3>
-            <p>Connexion base de données</p>
-            <a href="/r1.pdf">pdf exercice 1</a>
+        <!-- ATELIER 2 -->
+        <div class="card atelier2 hidden">
+            <h3>Exercice 3</h3>
+            <a href="#">Voir exercice</a>
+            <a href="r3.pdf">Voir rapport</a>
         </div>
 
-        <div class="card">
-            <h3>Atelier 4</h3>
-            <p>CRUD en PHP</p>
-            <a href="/r2.pdf">pdf exercice 2</a>
+        <div class="card atelier2 hidden">
+            <h3>Exercice 4</h3>
+            <a href="#">Voir exercice</a>
+            <a href="r4.pdf">Voir rapport</a>
         </div>
+
     </div>
 </section>
 
