@@ -243,45 +243,10 @@ button {
     <nav>
         <a href="#">Accueil</a>
         <a href="#projects">Ateliers PHP</a>
-        <a href="api/contact_me.html">Contact</a>
+        <a href="#projects1">Contact</a>
     </nav>
 </header>
-<section class="projects1" id="projects1">
-    <h1>CONTACT ME 💌</h1>
 
-<fieldset>
-    <legend>Get in touch</legend>
-
-    <form onsubmit="sendMessage(event)">
-        
-        <input type="text" id="name" placeholder="Your Name" required><br>
-        
-        <input type="email" id="email" placeholder="Your Email" required><br>
-        
-        <textarea id="message" placeholder="Your Message..." required></textarea><br>
-
-        <button type="submit">Send Message</button>
-    </form>
-</fieldset>
-
-
-</section>
-<script>
-function sendMessage(e){
-    e.preventDefault();
-
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-
-    alert("Thank you " + name + "! Your message has been sent 💖");
-
-    // reset form
-    document.getElementById("name").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("message").value = "";
-}
-</script>
 
 <section class="hero">
     <!-- IMAGE -->
@@ -361,6 +326,42 @@ function sendMessage(e){
 
     </div>
 </section>
+<section class="projects1" id="projects1">
+    <h1>CONTACT ME 💌</h1>
+
+<fieldset>
+    <legend>Get in touch</legend>
+
+    <form onsubmit="sendMessage(event)">
+        
+        <input type="text" id="name" placeholder="Your Name" required><br>
+        
+        <input type="email" id="email" placeholder="Your Email" required><br>
+        
+        <textarea id="message" placeholder="Your Message..." required></textarea><br>
+
+        <button type="submit">Send Message</button>
+    </form>
+</fieldset>
+
+
+</section>
+<script>
+function sendMessage(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    alert("Thank you " + name + "! Your message has been sent 💖");
+
+    // reset form
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+}
+</script>
 
 <footer>
     <p>© 2026 Yasmina - Portfolio</p>
