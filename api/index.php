@@ -207,26 +207,56 @@
 
         <!-- ATELIER 1 -->
         <div class="card atelier1">
-            <h3>Exercice 1</h3>
+            <h3>Seance 1</h3>
             <a href="seance1_ex2_etoile.php">Voir exercice</a>
             <a href="r1.pdf">Voir rapport</a>
         </div>
 
         <div class="card atelier1">
-            <h3>Exercice 2</h3>
+            <h3>Seance 2</h3>
+            <a href="seance1_ex1.php">Voir exercice</a>
+            <a href="r2.pdf">Voir rapport</a>
+        </div>
+        <div class="card atelier1">
+            <h3>Seance 3</h3>
+            <a href="seance1_ex1.php">Voir exercice</a>
+            <a href="r2.pdf">Voir rapport</a>
+        </div>
+        <div class="card atelier1">
+            <h3>Seance 4</h3>
             <a href="seance1_ex1.php">Voir exercice</a>
             <a href="r2.pdf">Voir rapport</a>
         </div>
 
         <!-- ATELIER 2 -->
         <div class="card atelier2 hidden">
-            <h3>Exercice 3</h3>
+            <h3>Seance 1</h3>
             <a href="#">Voir exercice</a>
             <a href="r3.pdf">Voir rapport</a>
         </div>
 
         <div class="card atelier2 hidden">
-            <h3>Exercice 4</h3>
+            <h3>Seance 2</h3>
+            <a href="#">Voir exercice</a>
+            <a href="r4.pdf">Voir rapport</a>
+        </div>
+        <div class="card atelier2 hidden">
+            <h3>Seance 3</h3>
+            <a href="#">Voir exercice</a>
+            <a href="r4.pdf">Voir rapport</a>
+        </div>
+        <div class="card atelier2 hidden">
+            <h3>Seance 4</h3>
+            <a href="#">Voir exercice</a>
+            <a href="r4.pdf">Voir rapport</a>
+        </div>
+        <div class="card atelier2 hidden">
+            <h3>Seance 5</h3>
+            <a href="#">Voir exercice</a>
+            <a href="r4.pdf">Voir rapport</a>
+        </div>
+        <div class="card atelier2 hidden">
+            <h3>Seance 6</h3>
             <a href="#">Voir exercice</a>
             <a href="r4.pdf">Voir rapport</a>
         </div>
