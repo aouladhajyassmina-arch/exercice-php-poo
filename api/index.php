@@ -232,6 +232,57 @@ button {
     color: white;
     cursor: pointer;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f6d5f7, #fbe9d7);
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+    font-size: 45px;
+    color: #fff;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+fieldset {
+    width: 85%;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+legend {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px;
+    color: #333;
+}
+
+ul {
+    margin: 15px;
+}
+
+li {
+    margin: 8px;
+}
+
 
     </style>
 </head>
@@ -244,6 +295,7 @@ button {
         <a href="#">Accueil</a>
         <a href="#projects">Ateliers PHP</a>
         <a href="#projects1">Contact</a>
+        <a href="#projects2">About me</a>
     </nav>
 </header>
 
@@ -256,6 +308,30 @@ button {
     <p>Je suis Yasmina, stagiaire en développement web. Voici mes ateliers PHP.</p>
 </section>
 
+<title>About Me</title>
+
+
+
+<section class="projects2" id="projects2">
+<h1>ABOUT ME 🌸</h1>
+
+<fieldset>
+    <legend>Who am I?</legend>
+
+    <p>Hi 👋 I'm Yasmina, a first-year development trainee passionate about web development and design.</p>
+
+    <p>I enjoy learning new technologies and building beautiful and functional websites.</p>
+
+    <ul>
+        <li>💻 HTML / CSS / JavaScript</li>
+        <li>🐘 PHP (beginner)</li>
+        <li>🎨 UI Design lover</li>
+    </ul>
+
+    <p>My goal is to become a professional web developer and create amazing projects 🚀</p>
+
+</fieldset>
+</section>
 <section class="projects" id="projects">
     <h2>Mes Ateliers PHP</h2>
 
