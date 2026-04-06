@@ -103,8 +103,8 @@
         footer {
             text-align: center;
             padding: 20px;
-            background: #2d3436;
-            color: white;
+            background: #da63da;
+            color: #ffffff;
             margin-top: 30px;
         }
 
@@ -121,7 +121,7 @@
         }
         .buttons {
     text-align: center;
-    margin: 20px;
+    margin: 40px;
 }
 
 .buttons button {
