@@ -170,6 +170,68 @@
     font-weight: bold;
     text-decoration: none;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f6d5f7, #fbe9d7);
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+    font-size: 45px;
+    color: #fff;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+fieldset {
+    width: 85%;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+legend {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255,255,255,0.6);
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, #d38bb5, #ff7eb3);
+    color: white;
+    cursor: pointer;
+}
 
     </style>
 </head>
@@ -184,6 +246,42 @@
         <a href="api/contact_me.html">Contact</a>
     </nav>
 </header>
+<section class="projects1" id="projects1">
+    <h1>CONTACT ME 💌</h1>
+
+<fieldset>
+    <legend>Get in touch</legend>
+
+    <form onsubmit="sendMessage(event)">
+        
+        <input type="text" id="name" placeholder="Your Name" required><br>
+        
+        <input type="email" id="email" placeholder="Your Email" required><br>
+        
+        <textarea id="message" placeholder="Your Message..." required></textarea><br>
+
+        <button type="submit">Send Message</button>
+    </form>
+</fieldset>
+
+
+</section>
+<script>
+function sendMessage(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    alert("Thank you " + name + "! Your message has been sent 💖");
+
+    // reset form
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+}
+</script>
 
 <section class="hero">
     <!-- IMAGE -->
