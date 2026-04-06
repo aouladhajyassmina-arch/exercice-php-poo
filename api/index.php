@@ -181,7 +181,7 @@
     <nav>
         <a href="#">Accueil</a>
         <a href="#projects">Ateliers PHP</a>
-        <a href="c:\Users\Hanae\Desktop\yassmina\exercice-php-poo\api\contact_me.html">Contact</a>
+        <a href="api/contact_me.html">Contact</a>
     </nav>
 </header>
 
