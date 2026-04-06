@@ -181,7 +181,7 @@
     <nav>
         <a href="#">Accueil</a>
         <a href="#projects">Ateliers PHP</a>
-        <a href="#">Contact</a>
+        <a href="contact_me.html">Contact</a>
     </nav>
 </header>
 
