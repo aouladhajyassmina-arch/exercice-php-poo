@@ -368,7 +368,8 @@ li {
 <div class="buttons">
     <button onclick="showAtelier(2)">Atelier 2</button>
 </div>
-<br><br>
+<br><br><br><br>
+<br><br><br><br>
         <!-- ATELIER 2 -->
         <div class="card atelier2 hidden">
             <h3>Seance 1</h3>
