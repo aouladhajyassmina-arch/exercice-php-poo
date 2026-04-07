@@ -337,7 +337,6 @@ li {
 
     <div class="buttons">
     <button onclick="showAtelier(1)">Atelier 1</button>
-    <button onclick="showAtelier(2)">Atelier 2</button>
 </div>
 
 <!-- PROJECTS -->
@@ -366,7 +365,9 @@ li {
             <a href="exercice4.php">Voir exercice</a>
             <a href="DOCTYPE2 html.pdf">Voir rapport</a>
         </div>
-
+<div class="buttons">
+    <button onclick="showAtelier(2)">Atelier 2</button>
+</div>
         <!-- ATELIER 2 -->
         <div class="card atelier2 hidden">
             <h3>Seance 1</h3>
