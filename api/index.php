@@ -358,13 +358,13 @@ li {
         </div>
         <div class="card atelier1">
             <h3>Seance 3</h3>
-            <a href="seance1_ex1.php">Voir exercice</a>
-            <a href="r2.pdf">Voir rapport</a>
+            <a href="exercice3.php">Voir exercice</a>
+            <a href="DOCTYPE3 html.pdf">Voir rapport</a>
         </div>
         <div class="card atelier1">
             <h3>Seance 4</h3>
-            <a href="seance1_ex1.php">Voir exercice</a>
-            <a href="r2.pdf">Voir rapport</a>
+            <a href="exercice4.php">Voir exercice</a>
+            <a href="DOCTYPE2 html.pdf">Voir rapport</a>
         </div>
 
         <!-- ATELIER 2 -->
