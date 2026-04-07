@@ -361,12 +361,12 @@ li {
         <div class="card atelier1">
             <h3>Seance 3</h3>
             <a href="exercice3.php">Voir exercice</a>
-            <a href="DOCTYPE3 html.pdf">Voir rapport</a>
+            <a href="/r3.pdf">Voir rapport</a>
         </div>
         <div class="card atelier1">
             <h3>Seance 4</h3>
             <a href="exercice4.php">Voir exercice</a>
-            <a href="DOCTYPE2 html.pdf">Voir rapport</a>
+            <a href="/r4.pdf">Voir rapport</a>
         </div>
 <div class="buttons">
     <button onclick="showAtelier(2)">Atelier 2</button>
