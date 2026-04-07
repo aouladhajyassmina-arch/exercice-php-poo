@@ -17,6 +17,7 @@
             background: #f5f6fa;
             color: #333;
         }
+        
 
         header {
             background: #eb87da;
@@ -260,7 +261,7 @@ fieldset {
     margin: 40px auto;
     padding: 20px;
     border-radius: 15px;
-    border: none;
+    border: none; 
     background: rgba(255,255,255,0.2);
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
@@ -318,6 +319,8 @@ li {
 <section class="projects2" id="projects2">
 <h1>ABOUT ME 🌸</h1>
 
+
+
 <fieldset>
     <legend>Who am I?</legend>
 
@@ -373,29 +376,23 @@ li {
 </div>
 <br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
+<br><br><br>
         <!-- ATELIER 2 -->
         <div class="card atelier2 hidden">
             <h3>Seance 1</h3>
-            <a href="#">Voir exercice</a>
-            <a href="r3.pdf">Voir rapport</a>
+            <a href="exercice5.php">Voir exercice</a>
+            <a href="r5.pdf">Voir rapport</a>
         </div>
 
         <div class="card atelier2 hidden">
             <h3>Seance 2</h3>
-            <a href="#">Voir exercice</a>
+            <a href="exercice5.php">Voir exercice</a>
             <a href="r4.pdf">Voir rapport</a>
         </div>
         <div class="card atelier2 hidden">
             <h3>Seance 3</h3>
             <a href="#">Voir exercice</a>
-            <a href="r4.pdf">Voir rapport</a>
+            <a href="r4.pdf">Voir rapport</ a>
         </div>
         <div class="card atelier2 hidden">
             <h3>Seance 4</h3>
