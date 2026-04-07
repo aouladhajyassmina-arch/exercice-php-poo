@@ -121,6 +121,8 @@
         }
         .buttons {
     text-align: center;
+    padding: auto;
+    
     margin: 40px;
 }
 
@@ -137,6 +139,7 @@
 
 .buttons button:hover {
     background: #e056fd;
+    
 }
 
 /* PROJECTS */
