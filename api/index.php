@@ -371,6 +371,13 @@ li {
 <div class="buttons">
     <button onclick="showAtelier(2)">Atelier 2</button>
 </div>
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
         <!-- ATELIER 2 -->
@@ -420,6 +427,7 @@ li {
 
 </section>
 <script>
+
 function sendMessage(e){
     e.preventDefault();
 
