@@ -369,19 +369,17 @@ li {
         <div class="card atelier1">
             <h3>Seance 4</h3>
             <a href="exercice4.php">Voir exercice</a>
-            <a href="\r4.pdf">Voir rapport</a>
+            <a href="/r4.pdf">Voir rapport</a>
         </div>
 <div class="buttons">
     <button onclick="showAtelier(2)">Atelier 2</button>
 </div>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br>
+<br>
         <!-- ATELIER 2 -->
         <div class="card atelier2 hidden">
             <h3>Seance 1</h3>
             <a href="exercice5.php">Voir exercice</a>
-            <a href="r5.pdf">Voir rapport</a>
+            <a href="/r5.pdf">Voir rapport</a>
         </div>
 
         <div class="card atelier2 hidden">
