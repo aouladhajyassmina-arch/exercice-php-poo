@@ -337,6 +337,17 @@ li {
 </section>
 <section class="projects" id="projects">
     <h2>Mes Ateliers PHP</h2>
+    <div class="project-card">
+            <div class="card-icon">
+                <img src="logo.jpeg" alt="PHP">
+            </div>
+            <h3>  <b>Atelier 1 :</b></h3>
+            <p>Maitrise des boucles et tableaux .</p>
+            <div class="card-buttons">
+                <a href="../api/ex1.php" class="btn-main">Exercice 1 </a>
+                <a href="../public/Exe1.pdf" class="btn-sub">Rapport</a>
+          </div>
+          </div>
 
     <div class="buttons">
     <button onclick="showAtelier(1)">Atelier 1</button>
@@ -361,12 +372,12 @@ li {
         <div class="card atelier1">
             <h3>Seance 3</h3>
             <a href="exercice3.php">Voir exercice</a>
-            <a href="/r3.pdf">Voir rapport</a>
+            <a href="\r3.pdf">Voir rapport</a>
         </div>
         <div class="card atelier1">
             <h3>Seance 4</h3>
             <a href="exercice4.php">Voir exercice</a>
-            <a href="/r4.pdf">Voir rapport</a>
+            <a href="\r4.pdf">Voir rapport</a>
         </div>
 <div class="buttons">
     <button onclick="showAtelier(2)">Atelier 2</button>
