@@ -395,16 +395,7 @@ li {
             <a href="#">Voir exercice</a>
             <a href="r4.pdf">Voir rapport</a>
         </div>
-        <div class="card atelier2 hidden">
-            <h3>Seance 5</h3>
-            <a href="#">Voir exercice</a>
-            <a href="r4.pdf">Voir rapport</a>
-        </div>
-        <div class="card atelier2 hidden">
-            <h3>Seance 6</h3>
-            <a href="#">Voir exercice</a>
-            <a href="r4.pdf">Voir rapport</a>
-        </div>
+        
 
     </div>
 </section>
