@@ -337,17 +337,6 @@ li {
 </section>
 <section class="projects" id="projects">
     <h2>Mes Ateliers PHP</h2>
-    <div class="project-card">
-            <div class="card-icon">
-                <img src="logo.jpeg" alt="PHP">
-            </div>
-            <h3>  <b>Atelier 1 :</b></h3>
-            <p>Maitrise des boucles et tableaux .</p>
-            <div class="card-buttons">
-                <a href="../api/ex1.php" class="btn-main">Exercice 1 </a>
-                <a href="../public/Exe1.pdf" class="btn-sub">Rapport</a>
-          </div>
-          </div>
 
     <div class="buttons">
     <button onclick="showAtelier(1)">Atelier 1</button>
