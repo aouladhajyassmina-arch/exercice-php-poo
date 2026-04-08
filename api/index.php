@@ -63,43 +63,71 @@
         }
 
         .projects {
-            padding: 40px 20px;
-        }
+    text-align: center;
+    padding: 40px;
+    background: #f5f7fa;
+}
 
-        .projects h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+.projects h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+.buttons {
+    margin-bottom: 30px;
+}
 
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
+.buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+.buttons button:hover {
+    background: #0056b3;
+}
 
-        .card h3 {
-            margin-bottom: 10px;
-        }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
 
-        .card a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #e187db;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card a {
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
 
         footer {
             text-align: center;
@@ -341,69 +369,68 @@ li {
 <section class="projects" id="projects">
     <h2>Mes Ateliers PHP</h2>
 
+    <!-- Buttons -->
     <div class="buttons">
-    <button onclick="showAtelier(1)">Atelier 1</button>
-</div>
+        <button onclick="showAtelier(1)">Atelier 1</button>
+        <button onclick="showAtelier(2)">Atelier 2</button>
+    </div>
 
-<!-- PROJECTS -->
-<section class="projects">
     <div class="grid">
 
         <!-- ATELIER 1 -->
         <div class="card atelier1">
-            <h3>Seance 1</h3>
+            <h3>Séance 1</h3>
             <a href="seance1_ex2_etoile.php">Voir exercice</a>
             <a href="r1.pdf">Voir rapport</a>
         </div>
 
         <div class="card atelier1">
-            <h3>Seance 2</h3>
+            <h3>Séance 2</h3>
             <a href="seance1_ex1.php">Voir exercice</a>
             <a href="r2.pdf">Voir rapport</a>
         </div>
+
         <div class="card atelier1">
-            <h3>Seance 3</h3>
+            <h3>Séance 3</h3>
             <a href="exercice3.php">Voir exercice</a>
-            <a href="\r3.pdf">Voir rapport</a>
+            <a href="r3.pdf">Voir rapport</a>
         </div>
+
         <div class="card atelier1">
-            <h3>Seance 4</h3>
+            <h3>Séance 4</h3>
             <a href="exercice4.php">Voir exercice</a>
-            <a href="/r4.pdf">Voir rapport</a>
+            <a href="r4.pdf">Voir rapport</a>
         </div>
-<div class="buttons">
-    <button onclick="showAtelier(2)">Atelier 2</button>
-</div>
-<br>
+
         <!-- ATELIER 2 -->
         <div class="card atelier2 hidden">
-            <h3>Seance 1</h3>
+            <h3>Séance 1</h3>
             <a href="exercice5.php">Voir exercice</a>
-            <a href="/r5.pdf">Voir rapport</a>
+            <a href="r5.pdf">Voir rapport</a>
         </div>
 
         <div class="card atelier2 hidden">
-            <h3>Seance 2</h3>
-            <a href="exercice5.php">Voir exercice</a>
-            <a href="r4.pdf">Voir rapport</a>
+            <h3>Séance 2</h3>
+            <a href="exercice6.php">Voir exercice</a>
+            <a href="r6.pdf">Voir rapport</a>
         </div>
+
         <div class="card atelier2 hidden">
-            <h3>Seance 3</h3>
+            <h3>Séance 3</h3>
             <a href="#">Voir exercice</a>
-            <a href="r4.pdf">Voir rapport</ a>
+            <a href="r7.pdf">Voir rapport</a>
         </div>
+
         <div class="card atelier2 hidden">
-            <h3>Seance 4</h3>
+            <h3>Séance 4</h3>
             <a href="#">Voir exercice</a>
-            <a href="r4.pdf">Voir rapport</a>
+            <a href="r8.pdf">Voir rapport</a>
         </div>
-        
 
     </div>
 </section>
 <section class="projects1" id="projects1">
     <h1>CONTACT ME 💌</h1>
-
 <fieldset>
     <legend>Get in touch</legend>
 
@@ -417,6 +444,9 @@ li {
 
         <button type="submit">Send Message</button>
     </form>
+    
+
+    
 </fieldset>
 
 
@@ -436,6 +466,18 @@ function sendMessage(e){
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
     document.getElementById("message").value = "";
+}
+function showAtelier(num) {
+    const atelier1 = document.querySelectorAll('.atelier1');
+    const atelier2 = document.querySelectorAll('.atelier2');
+
+    if (num === 1) {
+        atelier1.forEach(el => el.classList.remove('hidden'));
+        atelier2.forEach(el => el.classList.add('hidden'));
+    } else {
+        atelier1.forEach(el => el.classList.add('hidden'));
+        atelier2.forEach(el => el.classList.remove('hidden'));
+    }
 }
 </script>
 
