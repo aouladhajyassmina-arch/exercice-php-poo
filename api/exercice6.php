@@ -4,6 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f194da, #a50d8f);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+form {
+    background: #fff;
+    padding: 25px;
+    width: 400px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+    color: #a81b83;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #f187de;
+    outline: none;
+    box-shadow: 0 0 5px rgba(230, 72, 206, 0.77);
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+input[type="submit"] {
+    background: #ea66d6;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #d85ac5;
+}
+
+table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:nth-child(even) {
+    background: #f7f7f7;
+}
+</style>
 </head>
 <body>
     <?php
