@@ -380,50 +380,50 @@ li {
         <!-- ATELIER 1 -->
         <div class="card atelier1">
             <h3>Séance 1</h3>
-            <a href="seance1_ex2_etoile.php">Voir exercice</a>
+            <a href="seance1_ex2_etoile.php">Voir exercice 1</a>
             <a href="r1.pdf">Voir rapport</a>
         </div>
 
         <div class="card atelier1">
             <h3>Séance 2</h3>
-            <a href="seance1_ex1.php">Voir exercice</a>
+            <a href="seance1_ex1.php">Voir exercice 2</a>
             <a href="r2.pdf">Voir rapport</a>
         </div>
 
         <div class="card atelier1">
             <h3>Séance 3</h3>
-            <a href="exercice3.php">Voir exercice</a>
+            <a href="exercice3.php">Voir exercice 3</a>
             <a href="r3.pdf">Voir rapport</a>
         </div>
 
         <div class="card atelier1">
             <h3>Séance 4</h3>
-            <a href="exercice4.php">Voir exercice</a>
+            <a href="exercice4.php">Voir exercice 4</a>
             <a href="r4.pdf">Voir rapport</a>
         </div>
 
         <!-- ATELIER 2 -->
         <div class="card atelier2 hidden">
             <h3>Séance 1</h3>
-            <a href="exercice5.php">Voir exercice</a>
+            <a href="exercice5.php">Voir exercice 5</a>
             <a href="r5.pdf">Voir rapport</a>
         </div>
 
         <div class="card atelier2 hidden">
             <h3>Séance 2</h3>
-            <a href="exercice6.php">Voir exercice</a>
+            <a href="exercice6.php">Voir exercice 6</a>
             <a href="r6.pdf">Voir rapport</a>
         </div>
 
         <div class="card atelier2 hidden">
             <h3>Séance 3</h3>
-            <a href="#">Voir exercice</a>
+            <a href="exercice7.php">Voir exercice 7</a>
             <a href="r7.pdf">Voir rapport</a>
         </div>
 
         <div class="card atelier2 hidden">
             <h3>Séance 4</h3>
-            <a href="#">Voir exercice</a>
+            <a href="exercice8.php">Voir exercice 8</a>
             <a href="r8.pdf">Voir rapport</a>
         </div>
 
