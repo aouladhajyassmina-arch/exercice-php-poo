@@ -459,11 +459,7 @@ li {
         <a href="r6.pdf">Voir rapport</a>
       </div>
       
-      <div class="card">
-        <h3>Séance atelier 2</h3>
-        <a href="exercice8.php">Voir exercice 8</a>
-        <a href="r8.pdf">Voir rapport</a>
-      </div>
+      
     </div>
 
     <!-- ATELIER 3 -->
@@ -480,7 +476,7 @@ li {
     <button onclick="toggleAtelier('atelier4')">Atelier 4</button>
     <div class="grid atelier4 hidden">
       <div class="card">
-        <h3>Séance 1</h3>
+        <h3>Séance atelier 4</h3>
         <a href="exercice8.php">Exercice 8</a>
         <a href="r8.pdf">Voir rapport</a>
       </div>
