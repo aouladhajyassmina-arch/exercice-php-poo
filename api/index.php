@@ -65,7 +65,7 @@
         .projects {
     text-align: center;
     padding: 40px;
-    background: #f5f7fa;
+    background: background: linear-gradient(135deg, #f6d5f7, #fbe9d7);;
 }
 
 .projects h2 {
