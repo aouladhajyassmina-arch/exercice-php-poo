@@ -504,15 +504,15 @@ li {
         </div>
 
         <div class="skill">
-            <div class="circle" data-percent="75">
-                <span>75%</span>
+            <div class="circle" data-percent="90">
+                <span>90%</span>
             </div>
             <p>CSS</p>
         </div>
 
         <div class="skill">
-            <div class="circle" data-percent="67">
-                <span>67%</span>
+            <div class="circle" data-percent="70">
+                <span>70%</span>
             </div>
             <p>Bootstrap</p>
         </div>
@@ -526,14 +526,14 @@ li {
 
         <div class="skill">
             <div class="circle" data-percent="30">
-                <span>30%</span>
+                <span>20%</span>
             </div>
             <p>PHP</p>
         </div>
 
         <div class="skill">
             <div class="circle" data-percent="69">
-                <span>69%</span>
+                <span>20%</span>
             </div>
             <p>Python</p>
         </div>
