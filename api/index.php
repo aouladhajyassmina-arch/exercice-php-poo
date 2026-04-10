@@ -373,6 +373,7 @@ li {
     <div class="buttons">
         <button onclick="showAtelier(1)">Atelier 1</button>
         <button onclick="showAtelier(2)">Atelier 2</button>
+        <button onclick="showAtelier(3)">Atelier 3</button>
     </div>
 
     <div class="grid">
@@ -427,7 +428,7 @@ li {
             <a href="r8.pdf">Voir rapport</a>
         </div>
          <!-- ATELIER 3 -->
-        <div class="card atelier1">
+        <div class="card atelier3">
             <h3>Séance 1</h3>
             <a href="seance1_ex2_etoile.php">Voir exercice 9</a>
             <a href="r1.pdf">Voir rapport</a>
@@ -494,13 +495,16 @@ function sendMessage(e){
 function showAtelier(num) {
     const atelier1 = document.querySelectorAll('.atelier1');
     const atelier2 = document.querySelectorAll('.atelier2');
+    const atelier3 = document.querySelectorAll('.atelier3');
 
     if (num === 1) {
         atelier1.forEach(el => el.classList.remove('hidden'));
         atelier2.forEach(el => el.classList.add('hidden'));
+        atelier3.forEach(el => el.classList.remove('hidden'));
     } else {
         atelier1.forEach(el => el.classList.add('hidden'));
         atelier2.forEach(el => el.classList.remove('hidden'));
+        atelier3.forEach(el => el.classList.add('hidden'));
     }
 }
 </script>
