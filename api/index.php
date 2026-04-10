@@ -424,22 +424,22 @@ li {
     <button onclick="toggleAtelier('atelier1')">Atelier 1</button>
     <div class="grid atelier1 hidden">
       <div class="card">
-        <h3>Séance 1</h3>
+        <h3>Séance atelier 1</h3>
         <a href="seance1_ex2_etoile.php">Voir exercice 1</a>
         <a href="r1.pdf">Voir rapport</a>
       </div>
       <div class="card">
-        <h3>Séance 2</h3>
+        <h3>Séance atelier 1</h3>
         <a href="seance1_ex1.php">Voir exercice 2</a>
         <a href="r2.pdf">Voir rapport</a>
       </div>
       <div class="card">
-        <h3>Séance 3</h3>
+        <h3>Séance atelier 1</h3>
         <a href="exercice3.php">Voir exercice 3</a>
         <a href="r3.pdf">Voir rapport</a>
       </div>
       <div class="card">
-        <h3>Séance 4</h3>
+        <h3>Séance atelier 1</h3>
         <a href="exercice4.php">Voir exercice 4</a>
         <a href="r4.pdf">Voir rapport</a>
       </div>
@@ -449,22 +449,18 @@ li {
     <button onclick="toggleAtelier('atelier2')">Atelier 2</button>
     <div class="grid atelier2 hidden">
       <div class="card">
-        <h3>Séance 1</h3>
+        <h3>Séance atelier 2</h3>
         <a href="exercice5.php">Voir exercice 5</a>
         <a href="r5.pdf">Voir rapport</a>
       </div>
       <div class="card">
-        <h3>Séance 2</h3>
+        <h3>Séance atelier 2</h3>
         <a href="exercice6.php">Voir exercice 6</a>
         <a href="r6.pdf">Voir rapport</a>
       </div>
+      
       <div class="card">
-        <h3>Séance 3</h3>
-        <a href="exercice7.php">Voir exercice 7</a>
-        <a href="r7.pdf">Voir rapport</a>
-      </div>
-      <div class="card">
-        <h3>Séance 4</h3>
+        <h3>Séance atelier 2</h3>
         <a href="exercice8.php">Voir exercice 8</a>
         <a href="r8.pdf">Voir rapport</a>
       </div>
@@ -474,9 +470,9 @@ li {
     <button onclick="toggleAtelier('atelier3')">Atelier 3</button>
     <div class="grid atelier3 hidden">
       <div class="card">
-        <h3>Séance 1</h3>
-        <a href="exercice9.php">Exercice 9</a>
-        <a href="r9.pdf">Voir rapport</a>
+        <h3>Séance atelier 3</h3>
+        <a href="exercice7.php">Voir exercice 7</a>
+        <a href="r7.pdf">Voir rapport</a>
       </div>
     </div>
 
@@ -485,8 +481,8 @@ li {
     <div class="grid atelier4 hidden">
       <div class="card">
         <h3>Séance 1</h3>
-        <a href="exercice13.php">Exercice 13</a>
-        <a href="r13.pdf">Voir rapport</a>
+        <a href="exercice8.php">Exercice 8</a>
+        <a href="r8.pdf">Voir rapport</a>
       </div>
     </div>
   </div>
