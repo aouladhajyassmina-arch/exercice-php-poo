@@ -366,14 +366,6 @@ li {
 
 </fieldset>
 </section>
-<section class="projects" id="projects">
-    <h2>Mes Ateliers PHP</h2>
-
-    <!-- Buttons -->
-    <div class="buttons">
-        <button onclick="showAtelier(1)">Atelier 1</button>
-        <button onclick="showAtelier(2)">Atelier 2</button>
-    </div>
 
     <section class="projects" id="projects">
   <h2>Mes Ateliers PHP</h2>
