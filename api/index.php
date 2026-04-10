@@ -426,6 +426,30 @@ li {
             <a href="exercice8.php">Voir exercice 8</a>
             <a href="r8.pdf">Voir rapport</a>
         </div>
+         <!-- ATELIER 3 -->
+        <div class="card atelier1">
+            <h3>Séance 1</h3>
+            <a href="seance1_ex2_etoile.php">Voir exercice 9</a>
+            <a href="r1.pdf">Voir rapport</a>
+        </div>
+
+        <div class="card atelier1">
+            <h3>Séance 2</h3>
+            <a href="seance1_ex1.php">Voir exercice 10</a>
+            <a href="r2.pdf">Voir rapport</a>
+        </div>
+
+        <div class="card atelier1">
+            <h3>Séance 3</h3>
+            <a href="exercice3.php">Voir exercice 11</a>
+            <a href="r3.pdf">Voir rapport</a>
+        </div>
+
+        <div class="card atelier1">
+            <h3>Séance 4</h3>
+            <a href="exercice4.php">Voir exercice 12</a>
+            <a href="r4.pdf">Voir rapport</a>
+        </div>
 
     </div>
 </section>
