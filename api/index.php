@@ -482,6 +482,21 @@ li {
       </div>
     </div>
   </div>
+
+ <button onclick="toggleAtelier('atelier4')">Atelier 5</button>
+    <div class="grid atelier5 hidden">
+      <div class="card">
+        <h3>Séance atelier 5</h3>
+        <a href="exercice8.php">Ennoncé</a>
+        <a href="r8.pdf">Voir rapport</a>
+         <a href="r8.pdf">Repo GitHub</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
 </section>
 </section>
 <section class="skills">
