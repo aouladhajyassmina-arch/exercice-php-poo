@@ -489,7 +489,7 @@ li {
         <h3>Séance atelier 5</h3>
         <a href="exercice8.php">Ennoncé</a>
         <a href="r8.pdf">Voir rapport</a>
-         <a href="r8.pdf">Repo GitHub</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier5.git">Repo GitHub</a>
       </div>
     </div>
   </div>
