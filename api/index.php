@@ -572,8 +572,8 @@ li {
     <div class="grid atelier5 hidden">
       <div class="card">
         <h3>Séance atelier 5</h3>
-        <a href="exercice8.php">Ennoncé</a>
-        <a href="r8.pdf">Voir rapport</a>
+        <a href="exercice9.php">Ennoncé</a>
+        <a href="r9.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier5.git">Repo GitHub</a>
       </div>
     </div>
@@ -583,8 +583,44 @@ li {
     <div class="grid atelier5 hidden">
       <div class="card">
         <h3>Séance atelier 6</h3>
-        <a href="exercice.php">Ennoncé</a>
-        <a href="r8.pdf">Voir rapport</a>
+        <a href="exercice10.php">exercice 1</a>
+        <a href="r10.pdf">Voir rapport</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="grid atelier5 hidden">
+      <div class="card">
+        <h3>Séance atelier 6</h3>
+        <a href="exercice11.php">exercice 2</a>
+        <a href="r11.pdf">Voir rapport</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="grid atelier5 hidden">
+      <div class="card">
+        <h3>Séance atelier 6</h3>
+        <a href="exercice12.php">exercice 3</a>
+        <a href="r12.pdf">Voir rapport</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="grid atelier5 hidden">
+      <div class="card">
+        <h3>Séance atelier 6</h3>
+        <a href="exercice13.php">exercice 4</a>
+        <a href="r13.pdf">Voir rapport</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="grid atelier5 hidden">
+      <div class="card">
+        <h3>Séance atelier 6</h3>
+        <a href="exercice14.php">exercice 5</a>
+        <a href="r14.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
       </div>
     </div>
