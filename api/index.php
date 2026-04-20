@@ -93,6 +93,10 @@
 
 .buttons {
     margin-bottom: 30px;
+    text-align: center;
+    padding: auto;
+    
+    margin: 40px;
 }
 
 .buttons button {
@@ -457,7 +461,7 @@ li {
     <!-- IMAGE -->
     <img src="me2.png" alt="Photo Yasmina">
 
-    <h1>Bienvenue sur mon portfolio 👋</h1>
+    <h1>Bienvenue sur mon portfolio 🔔</h1>
     <p>Je suis Yasmina, stagiaire en développement web. Voici mes ateliers PHP.</p>
 </section>
 
@@ -466,20 +470,20 @@ li {
 
 
 <section class="projects2" id="projects2">
-<h1>ABOUT ME 🌸</h1>
+<h1>ABOUT ME 👑</h1>
 
 
 
 <fieldset>
     <legend>Who am I?</legend>
 
-    <p>Hi 👋 I'm Yasmina, a first-year development trainee passionate about web development and design.</p>
+    <p>Hi ✨ I'm Yasmina, a first-year development trainee passionate about web development and design.</p>
 
     <p>I enjoy learning new technologies and building beautiful and functional websites.</p>
 
     <ul>
-        <li>💻 HTML / CSS / JavaScript</li>
-        <li>🐘 PHP (beginner)</li>
+        <li>🪄 HTML / CSS / JavaScript</li>
+        <li>🕯️ PHP (beginner)</li>
         <li>🎨 UI Design lover</li>
     </ul>
 
@@ -634,7 +638,7 @@ li {
     </div>
 </section>
 <section class="projects1" id="projects1">
-    <h1>CONTACT ME 💌</h1>
+    <h1>CONTACT ME 📜</h1>
 <fieldset>
     <legend>Get in touch</legend>
 
@@ -664,7 +668,7 @@ function sendMessage(e){
     let email = document.getElementById("email").value;
     let message = document.getElementById("message").value;
 
-    alert("Thank you " + name + "! Your message has been sent 💖");
+    alert("Thank you " + name + "! Your message has been sent 💡");
 
     // reset form
     document.getElementById("name").value = "";
