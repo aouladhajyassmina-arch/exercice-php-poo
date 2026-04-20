@@ -6,6 +6,22 @@
     <title>Portfolio Yasmina</title>
 
     <style>
+        :root {
+    --primary: #6b1e1e;
+    --secondary: #a9745a;
+    --gold: #c9a227;
+    --bg: linear-gradient(135deg, #f5f0e6, #e8d8c3);
+    --text: #4b2e2e;
+}
+
+/* DARK MODE */
+.dark-mode {
+    --primary: #1e1e2f;
+    --secondary: #3a3a5a;
+    --gold: #ffcc70;
+    --bg: linear-gradient(135deg, #1e1e2f, #2c2c54);
+    --text: #ffffff;
+}
         * {
             margin: 0;
             padding: 0;
@@ -51,7 +67,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
-            border: 4px solid #e884c8;
+            border: 4px solid #e8be84;
         }
 
         .hero h1 {
@@ -160,16 +176,20 @@
 .buttons button {
     padding: 10px 20px;
     margin: 10px;
-    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
     background: linear-gradient(135deg, #c9a227, #8b5e3c);
     color: white;
-    border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .buttons button:hover {
     background: linear-gradient(135deg, #d4af37, #6b1e1e);
+}
+section {
+    transition: all 0.5s ease;
 }
     
 
@@ -187,15 +207,16 @@
 
 /* CARD */
 .card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    transition: 0.4s;
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
 }
 
 .card a {
@@ -386,15 +407,16 @@ li {
     }
 }
 .card {
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
     transition: 0.4s;
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
 .card:hover {
-    transform: translateY(-12px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
 }
 .hero img {
     transition: 0.5s;
@@ -402,6 +424,15 @@ li {
 
 .hero img:hover {
     transform: scale(1.1) rotate(3deg);
+}
+.theme-btn {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background: var(--gold);
+    color: white;
+    cursor: pointer;
 }
 
 
@@ -417,6 +448,7 @@ li {
         <a href="#projects">Ateliers PHP</a>
         <a href="#projects1">Contact</a>
         <a href="#projects2">About me</a>
+        <button onclick="toggleTheme()" class="theme-btn">🌙 Mode</button>
     </nav>
 </header>
 
@@ -670,6 +702,9 @@ document.querySelectorAll('.circle').forEach(circle => {
         }
     }, 10);
 });
+function toggleTheme() {
+    document.body.classList.toggle("dark-mode");
+}
 </script>
 
 <footer>
