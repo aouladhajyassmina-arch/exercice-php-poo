@@ -13,18 +13,17 @@
             font-family: Arial, sans-serif;
         }
 
-        body {
-            background: #f5f6fa;
-            color: #333;
-        }
+       body {
+    background: linear-gradient(135deg, #f5f0e6, #e8d8c3);
+    color: #4b2e2e;
+}
         
 
-        header {
-            background: #eb87da;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+       header {
+    background: linear-gradient(135deg, #6b1e1e, #a9745a);
+}
+
+        
 
         nav {
             margin-top: 10px;
@@ -81,7 +80,7 @@
     padding: 10px 20px;
     margin: 5px;
     border: none;
-    background: #007bff;
+    background: linear-gradient(135deg, #c9a227, #8b5e3c);
     color: white;
     border-radius: 8px;
     cursor: pointer;
@@ -89,7 +88,7 @@
 }
 
 .buttons button:hover {
-    background: #0056b3;
+    background: linear-gradient(135deg, #d4af37, #6b1e1e);
 }
 
 .grid {
@@ -118,7 +117,7 @@
     display: block;
     margin: 5px 0;
     text-decoration: none;
-    color: #007bff;
+    color: #a9745a;
 }
 
 .card a:hover {
@@ -132,7 +131,7 @@
         footer {
             text-align: center;
             padding: 20px;
-            background: #da63da;
+            background: #6b1e1e;
             color: #ffffff;
             margin-top: 30px;
         }
@@ -159,7 +158,7 @@
     padding: 10px 20px;
     margin: 10px;
     border: none;
-    background: #e98ae9;
+    background: linear-gradient(135deg, #c9a227, #8b5e3c);
     color: white;
     border-radius: 20px;
     cursor: pointer;
@@ -167,9 +166,10 @@
 }
 
 .buttons button:hover {
-    background: #e056fd;
-    
+    background: linear-gradient(135deg, #d4af37, #6b1e1e);
 }
+    
+
 
 /* PROJECTS */
 .projects {
@@ -198,7 +198,7 @@
 .card a {
     display: block;
     margin-top: 10px;
-    color: #ea9ad9;
+    color: #a9745a;
     font-weight: bold;
     text-decoration: none;
 }
@@ -210,7 +210,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f6d5f7, #fbe9d7);
+    background: linear-gradient(135deg, #f5f0e6, #e8d8c3);
+    color: #4b2e2e;
     min-height: 100vh;
 }
 
@@ -260,7 +261,7 @@ button {
     font-size: 18px;
     border-radius: 30px;
     border: none;
-    background: linear-gradient(135deg, #d38bb5, #ff7eb3);
+    background: linear-gradient(135deg, #c9a227, #8b5e3c);
     color: white;
     cursor: pointer;
 }
@@ -272,7 +273,8 @@ button {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f6d5f7, #fbe9d7);
+    background: linear-gradient(135deg, #f5f0e6, #e8d8c3);
+    color: #4b2e2e;
     min-height: 100vh;
 }
 
