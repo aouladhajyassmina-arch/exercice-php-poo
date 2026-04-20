@@ -298,9 +298,7 @@ button {
     color: white;
     cursor: pointer;
 }
-.buttons:hover {
-    background: linear-gradient(135deg, #d4af37, #6b1e1e);
-}
+
 * {
     margin: 0;
     padding: 0;
