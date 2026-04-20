@@ -171,10 +171,15 @@
             }
         }
         .buttons {
-    text-align: center;
-    padding: auto;
-    
-    margin: 40px;
+    display: block;
+    margin: 20px auto;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, #c9a227, #8b5e3c);
+    color: white;
+    cursor: pointer;
 }
 
 .buttons button {
