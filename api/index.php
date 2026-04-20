@@ -36,7 +36,7 @@
         
 
        header {
-    background: linear-gradient(135deg, #6b1e1e, #a9745a);
+    background: linear-gradient(135deg, #c9a227, #8b5e3c);
     color: white; padding: 20px;
      text-align: center;
     
@@ -154,7 +154,7 @@
         footer {
             text-align: center;
             padding: 20px;
-            background: #6b1e1e;
+             background: linear-gradient(135deg, #c9a227, #8b5e3c);
             color: #ffffff;
             margin-top: 30px;
         }
@@ -450,8 +450,8 @@ li {
 <body>
 
 <header>
-    <h1>Yasmina</h1>
-    <p>Stagiaire 1ère année Développement</p>
+    <h1>Yasmina Aoulad Haj</h1>
+    <p>Stagiaire 1ère année Développement Digital</p>
     <nav>
         <a href="#">Accueil</a>
         <a href="#projects">Ateliers PHP</a>
