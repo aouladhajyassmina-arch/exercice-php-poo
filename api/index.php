@@ -589,42 +589,30 @@ li {
       </div>
     </div>
   </div>
-  <div class="grid atelier5 hidden">
+  <div class="grid atelier1 hidden">
       <div class="card">
         <h3>Séance atelier 6</h3>
-        <a href="exercice11.php">exercice 2</a>
+        <a href="exercice11.php">Voir exercice 2</a>
         <a href="r11.pdf">Voir rapport</a>
-         <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
       </div>
-    </div>
-  </div>
-  <div class="grid atelier5 hidden">
       <div class="card">
         <h3>Séance atelier 6</h3>
-        <a href="exercice12.php">exercice 3</a>
+        <a href="exercice12.php">Voir exercice 3</a>
         <a href="r12.pdf">Voir rapport</a>
-         <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
       </div>
-    </div>
-  </div>
-  <div class="grid atelier5 hidden">
       <div class="card">
         <h3>Séance atelier 6</h3>
-        <a href="exercice13.php">exercice 4</a>
+        <a href="exercice13.php">Voir exercice 4</a>
         <a href="r13.pdf">Voir rapport</a>
-         <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
       </div>
-    </div>
-  </div>
-  <div class="grid atelier5 hidden">
       <div class="card">
         <h3>Séance atelier 6</h3>
-        <a href="exercice14.php">exercice 5</a>
+        <a href="exercice14.php">Voir exercice 5</a>
         <a href="r14.pdf">Voir rapport</a>
-         <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
       </div>
+    
     </div>
-  </div>
+ 
 
 
 
