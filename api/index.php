@@ -580,16 +580,14 @@ li {
   </div>
   <!-- ATELIER 6 -->
     <button onclick="toggleAtelier('atelier6')">Atelier 6</button>
-    <div class="grid atelier5 hidden">
-      <div class="card">
+
+  <div class="grid atelier1 hidden">
+     <div class="card">
         <h3>Séance atelier 6</h3>
-        <a href="exercice10.php">exercice 1</a>
+        <a href="exercice10.php">Voir exercice 1</a>
         <a href="r10.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
       </div>
-    </div>
-  </div>
-  <div class="grid atelier1 hidden">
       <div class="card">
         <h3>Séance atelier 6</h3>
         <a href="exercice11.php">Voir exercice 2</a>
