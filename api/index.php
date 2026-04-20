@@ -362,6 +362,42 @@ li {
     border-radius: 50%;
     position: absolute;
 }
+.hero, .projects, .projects2, .skills, .projects1 {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero { animation-delay: 0.2s; }
+.projects2 { animation-delay: 0.4s; }
+.projects { animation-delay: 0.6s; }
+.skills { animation-delay: 0.8s; }
+.projects1 { animation-delay: 1s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.card {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+.hero img {
+    transition: 0.5s;
+}
+
+.hero img:hover {
+    transform: scale(1.1) rotate(3deg);
+}
 
 
     </style>
@@ -500,7 +536,7 @@ li {
     <div class="grid atelier5 hidden">
       <div class="card">
         <h3>Séance atelier 6</h3>
-        <a href="exercice9.php">Ennoncé</a>
+        <a href="exercice.php">Ennoncé</a>
         <a href="r8.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
       </div>
@@ -618,8 +654,16 @@ function toggleAtelier(atelier) {
 }
 document.querySelectorAll('.circle').forEach(circle => {
     let percent = circle.getAttribute('data-percent');
-    let degree = (percent / 100) * 360;
-    circle.style.background = `conic-gradient(#5d4037 ${degree}deg, #eee ${degree}deg)`;
+    let degree = 0;
+
+    let interval = setInterval(() => {
+        degree++;
+        circle.style.background = `conic-gradient(#c9a227 ${degree}deg, #eee ${degree}deg)`;
+
+        if (degree >= (percent / 100) * 360) {
+            clearInterval(interval);
+        }
+    }, 10);
 });
 </script>
 
