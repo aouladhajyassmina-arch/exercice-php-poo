@@ -309,7 +309,7 @@ button {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f5f0e6, #e8d8c3);
+    background: linear-gradient(135deg, #c9a227, #8b5e3c);
     color: #4b2e2e;
     min-height: 100vh;
 }
@@ -328,7 +328,7 @@ fieldset {
     padding: 20px;
     border-radius: 15px;
     border: none; 
-    background: rgba(255,255,255,0.2);
+    background: linear-gradient(135deg, #c9a227, #8b5e3c);
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
