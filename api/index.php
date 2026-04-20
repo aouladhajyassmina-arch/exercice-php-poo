@@ -584,28 +584,28 @@ li {
   <div class="grid atelier1 hidden">
      <div class="card">
         <h3>Séance atelier 6</h3>
-        <a href="exercice10.php">Voir exercice 1</a>
+        <a href="exercice1at6.php">Voir exercice 1</a>
         <a href="r10.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
       </div>
       <div class="card">
         <h3>Séance atelier 6</h3>
-        <a href="exercice11.php">Voir exercice 2</a>
+        <a href="exercice2at6.php">Voir exercice 2</a>
         <a href="r11.pdf">Voir rapport</a>
       </div>
       <div class="card">
         <h3>Séance atelier 6</h3>
-        <a href="exercice12.php">Voir exercice 3</a>
+        <a href="exercice3at6.php">Voir exercice 3</a>
         <a href="r12.pdf">Voir rapport</a>
       </div>
       <div class="card">
         <h3>Séance atelier 6</h3>
-        <a href="exercice13.php">Voir exercice 4</a>
+        <a href="exercice4at6.php">Voir exercice 4</a>
         <a href="r13.pdf">Voir rapport</a>
       </div>
       <div class="card">
         <h3>Séance atelier 6</h3>
-        <a href="exercice14.php">Voir exercice 5</a>
+        <a href="exercice5at6.php">Voir exercice 5</a>
         <a href="r14.pdf">Voir rapport</a>
       </div>
     
