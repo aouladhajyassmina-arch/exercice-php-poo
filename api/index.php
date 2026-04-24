@@ -533,12 +533,12 @@ li {
     <div class="grid atelier2 hidden">
       <div class="card">
         <h3>Séance atelier 2</h3>
-        <a href="exercice5.php">Voir exercice 5</a>
+        <a href="exercice1at2.php">Voir exercice 1</a>
         <a href="r5.pdf">Voir rapport</a>
       </div>
       <div class="card">
         <h3>Séance atelier 2</h3>
-        <a href="exercice6.php">Voir exercice 6</a>
+        <a href="exercice2at2.php">Voir exercice 2</a>
         <a href="r6.pdf">Voir rapport</a>
       </div>
       
@@ -550,7 +550,7 @@ li {
     <div class="grid atelier3 hidden">
       <div class="card">
         <h3>Séance atelier 3</h3>
-        <a href="exercice7.php">Voir exercice 7</a>
+        <a href="exercice1at3.php">Voir exercice 1</a>
         <a href="r7.pdf">Voir rapport</a>
       </div>
     </div>
@@ -560,7 +560,7 @@ li {
     <div class="grid atelier4 hidden">
       <div class="card">
         <h3>Séance atelier 4</h3>
-        <a href="exercice8.php">Exercice 8</a>
+        <a href="exercice1at4.php">Exercice 1</a>
         <a href="r8.pdf">Voir rapport</a>
         <a href="https://github.com/aouladhajyassmina-arch/atelie4r.git">Voir GitHub</a>
       </div>
