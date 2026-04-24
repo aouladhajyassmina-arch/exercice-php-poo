@@ -608,8 +608,17 @@ li {
         <a href="exercice5at6.php">Voir exercice 5</a>
         <a href="r14.pdf">Voir rapport</a>
       </div>
-    
+    <!-- ATELIER 7 -->
     </div>
+     <button onclick="toggleAtelier('atelier7')">Atelier 6</button>
+
+  <div class="grid atelier1 hidden">
+     <div class="card">
+        <h3>Séance atelier 7</h3>
+        <a href="exercice1at7.php">Voir exercice 1</a>
+        <a href="r15.pdf">Voir rapport</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
+      </div>
  
 
 

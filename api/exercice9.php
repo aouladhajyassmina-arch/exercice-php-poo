@@ -1,82 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            background: #ffe4ec;
-        }
+<?php
+class Voiture {
+    private $marque;
+    private $modele;
 
-        .calc {
-            margin: 100px auto;
-            padding: 20px;
-            width: 250px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 0 10px pink;
-        }
-
-        input {
-            width: 90%;
-            height: 40px;
-            font-size: 20px;
-            margin-bottom: 10px;
-            text-align: right;
-        }
-
-        button {
-            width: 50px;
-            height: 50px;
-            margin: 5px;
-            font-size: 18px;
-            border: none;
-            border-radius: 10px;
-            background: pink;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #ff99bb;
-        }
-    </style>
-<body>
-    <div>
-        <input type="text"id="calc">
-        <br>
-        <button onclick="don()">✅</button>
-        <button onclick="affiche()">❎</button>
-        <button onclick="eface()">🧽</button>
-        <ul id="list"></ul>
-       
-
-    </div>
-    <script>
-        
-function don(){
-    let val=document.getElementById("calc").value;
-    if (val !==""){
-        let li=document.createElement("li");
-        li.textContent=val;
-        document.getElementById("list").appendChild(li);
-        document.getElementById("calc").value="";
+    public function __construct($marque, $modele) {
+        $this->marque = $marque;
+        $this->modele = $modele;
     }
 
-
+    public function afficher() {
+        echo "<div class='card'>
+                <h2>Voiture</h2>
+                <p><strong>Marque:</strong> $this->marque</p>
+                <p><strong>Modèle:</strong> $this->modele</p>
+              </div>";
     }
-    function eface(){
-         document.getElementById("calc").value="";
-
-    }
-    li.onclick = function(){
-    li.remove();
 }
-    </script>
-    
-    
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Voiture</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<?php
+$v1 = new Voiture("Toyota", "Corolla");
+$v1->afficher();
+?>
+
 </body>
 </html>
