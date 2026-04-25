@@ -619,8 +619,9 @@ li {
         <a href="r15.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier7.git">Repo GitHub</a>
       </div>
+      </section>
  
-<br><br><br>
+
 <!-- ATELIER CANVA -->
 <button onclick="toggleAtelier('canva')">Ateliers Canva</button>
 <div class="grid canva hidden">
@@ -666,7 +667,7 @@ li {
 
 
 
-</section>
+
 </section>
 <section class="skills">
     <h2>My Skills</h2>
