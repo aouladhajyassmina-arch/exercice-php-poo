@@ -648,19 +648,19 @@ li {
 <div class="grid ppt hidden">
   <div class="card">
     <h3>PowerPoint 1</h3>
-    <a href="c:\Users\HP\Desktop\presontation powerpoint\Roma Papolion.pptx">Voir présentation</a>
+    <a href="Roma Papolion.pptx">Voir présentation</a>
   </div>
   <div class="card">
     <h3>PowerPoint 1</h3>
-    <a href="c:\Users\HP\Desktop\presontation powerpoint\THE BEST CITY IN THE WORLD.pptx">Voir présentation</a>
+    <a href="THE BEST CITY IN THE WORLD.pptx">Voir présentation</a>
   </div>
   <div class="card">
     <h3>PowerPoint 1</h3>
-    <a href="c:\Users\HP\Desktop\presontation powerpoint\film avec logo.pptx">Voir présentation</a>
+    <a href="film avec logo.pptx">Voir présentation</a>
   </div>
   <div class="card">
     <h3>PowerPoint 1</h3>
-    <a href="c:\Users\HP\Desktop\presontation powerpoint\Ferrari.pptx">Voir présentation</a>
+    <a href="Ferrari.pptx">Voir présentation</a>
   </div>
 </div>
 
