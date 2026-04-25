@@ -568,7 +568,7 @@ li {
   </div>
   
 <!-- ATELIER 5 -->
- <button onclick="toggleAtelier('atelier4')">Atelier 5</button>
+ <button onclick="toggleAtelier('atelier5')">Atelier 5</button>
     <div class="grid atelier5 hidden">
       <div class="card">
         <h3>Séance atelier 5</h3>
@@ -620,7 +620,49 @@ li {
          <a href="https://github.com/aouladhajyassmina-arch/atelier7.git">Repo GitHub</a>
       </div>
  
+<br><br><br>
+<!-- ATELIER CANVA -->
+<button onclick="toggleAtelier('canva')">Ateliers Canva</button>
+<div class="grid canva hidden">
+  <div class="card">
+    <h3>Canva 1</h3>
+    <a href="https://canva.link/z60kegcufkn4jme">Voir design</a>
+  </div>
+  <div class="card">
+    <h3>Canva 2</h3>
+    <a href="https://canva.link/bgs10ih6bm1s09u">Voir design</a>
+  </div>
+  <div class="card">
+    <h3>Canva 2</h3>
+    <a href="https://canva.link/g5dha4m0l3nuvv5">Voir design</a>
+  </div>
+  <div class="card">
+    <h3>Canva 2</h3>
+    <a href="https://canva.link/bfkqlfssfrhd6z8">Voir design</a>
+  </div>
+</div>
 
+<!-- ATELIER POWERPOINT -->
+<button onclick="toggleAtelier('ppt')">Ateliers PowerPoint</button>
+<div class="grid ppt hidden">
+  <div class="card">
+    <h3>PowerPoint 1</h3>
+    <a href="#">Voir présentation</a>
+  </div>
+</div>
+
+<!-- ATELIER WEB -->
+<button onclick="toggleAtelier('web')">HTML / CSS / JavaScript</button>
+<div class="grid web hidden">
+  <div class="card">
+    <h3>Projet Web 1</h3>
+    <a href="#">Voir projet</a>
+  </div>
+  <div class="card">
+    <h3>Projet Web 2</h3>
+    <a href="#">Voir projet</a>
+  </div>
+</div>
 
 
 

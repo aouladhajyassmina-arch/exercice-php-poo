@@ -1,22 +1,16 @@
 <?php
-function verifier($p1, $p2) {
-    if ($p1 == "DEV101" && $p2 == "123") {
-        return true;
+session_start();
+$error = "";
+if (isset($_POST['login'])) {
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
+
+    // Login simple (تجربة فقط)
+    if ($user == "admin" && $pass == "1234") {
+        $_SESSION['user'] = $user;
+        header("Location: home.php");
     } else {
-        return false;
-    }
-}
-
-$message = "";
-
-if (isset($_POST['conn'])) {
-    $login = $_POST['login'];
-    $pass = $_POST['pass'];
-
-    if (verifier($login, $pass)) {
-        $message = "✅ Connexion réussie";
-    } else {
-        $message = "❌ Login ou mot de passe incorrect";
+        $error = "Login ou mot de passe incorrect !";
     }
 }
 ?>
@@ -24,106 +18,130 @@ if (isset($_POST['conn'])) {
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Login - TDM Classroom</title>
-
-<style>
-body {
+    <meta charset="UTF-8">
+    <title>TDM-Classroom</title>
+    <style>
+        body {
     margin: 0;
     font-family: Arial;
-    background: linear-gradient(135deg, #ffb6c1, #ffe6f0);
+    background: #f5f5f5;
+}
+
+/* Header */
+header {
+    background: #2f3542;
+    color: white;
+    padding: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* Banner */
+.banner {
+    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+    background-size: cover;
+    height: 200px;
+    color: white;
+    display: flex;
     align-items: center;
-    height: 100vh;
+    padding-left: 30px;
 }
 
-/* Card */
-.container {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    width: 350px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    text-align: center;
+/* Login box */
+.login-box {
+    width: 400px;
+    margin: 30px auto;
+    background: #2f3542;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
 }
 
-/* Title */
-h2 {
-    color: #ff4d88;
-}
-
-/* Inputs */
-input[type="text"], input[type="password"] {
+.login-box input {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin: 10px 0;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    outline: none;
-    transition: 0.3s;
+    border: none;
 }
 
-input:focus {
-    border-color: #ff4d88;
-    box-shadow: 0 0 8px #ffb6c1;
+.buttons {
+    display: flex;
+    gap: 10px;
 }
 
-/* Buttons */
-.btn {
-    width: 48%;
+button {
     padding: 10px;
     border: none;
-    border-radius: 10px;
     cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
 }
 
-.login {
-    background: #ff4d88;
+button[type="submit"] {
+    background: #1e90ff;
     color: white;
 }
 
-.login:hover {
-    background: #e6005c;
+button[type="reset"] {
+    background: gray;
+    color: white;
 }
 
-.reset {
-    background: #ddd;
+.error {
+    color: red;
 }
 
-.reset:hover {
-    background: #bbb;
+/* Footer */
+footer {
+    background: #2f3542;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
-
-/* Message */
-.message {
-    margin-top: 15px;
-    font-weight: bold;
-}
-</style>
+    </style>
 
 </head>
 <body>
 
-<div class="container">
-    <h2>💖 Connexion</h2>
+<header>
+    <h2>TDM-Classroom</h2>
+    <nav>
+        <a href="#">Accueil</a>
+        <a href="#">Nouveau</a>
+        <a href="#">Rechercher</a>
+    </nav>
+</header>
+
+<section class="banner">
+    <h1>Bienvenue à TDM-Classroom</h1>
+</section>
+
+<div class="login-box">
+    <h3>Veuillez vous authentifier</h3>
 
     <form method="POST">
-        <input type="text" name="login" placeholder="Login" required>
-        <input type="password" name="pass" placeholder="Password" required>
+        <label>Login :</label>
+        <input type="text" name="username" required>
 
-        <div>
-            <input type="submit" name="conn" value="Connexion" class="btn login">
-            <input type="reset" value="Annuler" class="btn reset">
+        <label>Password :</label>
+        <input type="password" name="password" required>
+
+        <div class="buttons">
+            <button type="submit" name="login">Connexion</button>
+            <button type="reset">Annuler</button>
         </div>
     </form>
 
-    <div class="message">
-        <?php echo $message; ?>
-    </div>
+    <p class="error"><?php echo $error; ?></p>
 </div>
+
+<footer>
+    <p>TDM-Classroom - Copyright ©</p>
+</footer>
 
 </body>
 </html>
