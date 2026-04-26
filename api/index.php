@@ -669,7 +669,7 @@ li {
 <div class="grid web hidden">
   <div class="card">
     <h3>Projet Web 1</h3>
-    <a href="#">Voir projet</a>
+    <a href="student-market-pro.html">Voir projet</a>
   </div>
   <div class="card">
     <h3>Projet Web 2</h3>
