@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Market Pro — Buy, Sell & Hustle</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+  /* ── RESET & BASE ──────────────────────────────────────── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg-0: #0a0a0f;
+    --bg-1: #111118;
+    --bg-2: #18181f;
+    --bg-card: rgba(255,255,255,0.04);
+    --border: rgba(255,255,255,0.08);
+    --border-glow: rgba(92, 246, 231, 0.4);
+    --blue: #0a2444;        /* أزرق غامق */
+  --teal: #008080;        /* أخضر مزرق */
+  --teal-light: #2dd4bf;
+    --neon: #b5fcfd;
+    --text-primary: #f8f8ff;
+    --text-secondary: #a1a1b5;
+    --text-muted: #5c5c7a;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+   --grad-hero: linear-gradient(135deg, #0a2444 0%, #008080 100%);
+    --grad-card: linear-gradient(145deg, rgba(92, 228, 246, 0.15) 0%, rgba(59,130,246,0.08) 100%);
+    --blur: blur(20px);
+    --shadow-card: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+    --shadow-glow: 0 0 40px rgba(92, 246, 244, 0.25);
+    --transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0a2444 0%, #008080 100%);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* ── CUSTOM CURSOR ─────────────────────────────────────── */
+  #cursor {
+    position: fixed; width: 12px; height: 12px;
+    background: var(--purple); border-radius: 50%;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%,-50%);
+    transition: transform 0.1s ease, background 0.2s ease;
+  }
+  #cursor-ring {
+    position: fixed; width: 40px; height: 40px;
+    border: 1.5px solid rgba(81, 158, 158, 0.5);
+    border-radius: 50%; pointer-events: none; z-index: 9998;
+    transform: translate(-50%,-50%);
+    transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* ── LOADING SCREEN ────────────────────────────────────── */
+  #loader {
+    position: fixed; inset: 0;
+    background: var(--bg-0);
+    z-index: 10000;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 24px;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+  #loader.hidden { opacity: 0; visibility: hidden; }
+  .loader-logo {
+    font-size: 28px; font-weight: 800; letter-spacing: -1px;
+    background: var(--grad-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .loader-bar {
+    width: 200px; height: 2px;
+    background: rgba(255,255,255,0.08); border-radius: 99px; overflow: hidden;
+  }
+  .loader-fill {
+    height: 100%; width: 0%;
+    background: var(--grad-hero); border-radius: 99px;
+    animation: loadFill 1.8s cubic-bezier(0.4,0,0.2,1) forwards;
+  }
+  @keyframes loadFill { to { width: 100%; } }
+
+  /* ── THREE.JS CANVAS ───────────────────────────────────── */
+  #three-canvas {
+    position: fixed; inset: 0; z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ── NAV ───────────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 0 40px;
+    height: 72px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(10,10,15,0.7);
+    backdrop-filter: var(--blur);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-size: 18px; font-weight: 800; letter-spacing: -0.5px;
+    background: var(--grad-hero); -webkit-background-clip: text; -webkit-text-fill-color:  #008080; ;
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 8px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text-secondary); text-decoration: none;
+    font-size: 14px; font-weight: 500; padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+  }
+  .nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+  .nav-cta {
+    padding: 9px 20px !important;
+    background: var(--grad-hero) !important;
+    -webkit-text-fill-color: white !important;
+    color: white !important;
+    border-radius: var(--radius-sm) !important;
+  }
+  .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: var(--shadow-glow); }
+
+  /* ── MAIN CONTENT ──────────────────────────────────────── */
+  main { position: relative; z-index: 1; }
+
+  /* ── HERO ──────────────────────────────────────────────── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 16px;
+    background: rgba(139,92,246,0.12);
+    border: 1px solid rgba(92, 233, 246, 0.3);
+    border-radius: 99px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+    color: var(--purple-light);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+  .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--purple); animation: pulse 2s ease infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+
+  .hero-title {
+    font-size: clamp(36px, 7vw, 88px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -3px;
+    max-width: 900px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s ease 0.4s both;
+  }
+  .hero-title .grad {
+    background: var(--grad-hero); -webkit-background-clip: text; -webkit-text-fill-color: #008080; ;
+  }
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--text-secondary);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s ease 0.6s both;
+  }
+  .hero-btns {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    justify-content: center;
+    animation: fadeUp 0.8s ease 0.8s both;
+  }
+  .btn-primary {
+    padding: 14px 32px;
+    background: var(--grad-hero);
+    color: white; font-size: 16px; font-weight: 700;
+    border: none; border-radius: var(--radius-sm);
+    cursor: none; text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 24px rgba(92, 246, 241, 0.4);
+    position: relative; overflow: hidden;
+  }
+  .btn-primary::after {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(255,255,255,0.1);
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .btn-primary:hover::after { opacity: 1; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(139,92,246,0.6); }
+
+  .btn-secondary {
+    padding: 14px 32px;
+    background: rgba(255,255,255,0.05);
+    color: var(--text-primary); font-size: 16px; font-weight: 600;
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    cursor: none; text-decoration: none;
+    transition: var(--transition);
+    backdrop-filter: var(--blur);
+  }
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.09);
+    border-color: rgba(92, 220, 246, 0.4);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .hero-stats {
+    display: flex; gap: 48px;
+    margin-top: 72px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+    animation: fadeUp 0.8s ease 1s both;
+  }
+  .stat { text-align: center; }
+  .stat-num { font-size: 28px; font-weight: 800; background: var(--grad-hero); -webkit-background-clip: text; -webkit-text-fill-color: #008080; ; }
+  .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; color: #008080; }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ── SECTION WRAPPER ───────────────────────────────────── */
+  .section {
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-tag {
+    font-size: 12px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--purple-light);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800; letter-spacing: -1.5px; line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .section-sub { color: var(--text-secondary); font-size: 17px; max-width: 480px; margin: 0 auto; line-height: 1.6; }
+
+  /* ── PRODUCT GRID ──────────────────────────────────────── */
+  .filter-bar {
+    display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 40px;
+  }
+  .filter-btn {
+    padding: 8px 20px;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 99px; color: var(--text-secondary);
+    font-size: 13px; font-weight: 600; cursor: none;
+    transition: var(--transition); backdrop-filter: var(--blur);
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: rgba(139,92,246,0.12);
+    border-color: var(--border-glow); color: var(--purple-light);
+    box-shadow: 0 0 20px rgba(92, 246, 233, 0.2);
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .product-card {
+    background: var(--bg-card);
+    backdrop-filter: var(--blur);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+    cursor: none;
+  }
+  .product-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--grad-card); opacity: 0; transition: opacity 0.3s;
+    border-radius: inherit; pointer-events: none;
+  }
+  .product-card:hover { transform: translateY(-6px) scale(1.01); border-color: var(--border-glow); box-shadow: var(--shadow-glow), var(--shadow-card); }
+  .product-card:hover::before { opacity: 1; }
+
+  .card-img {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover;
+    display: block; background: var(--bg-2);
+    position: relative;
+  }
+  .card-img-placeholder {
+    width: 100%; aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 52px; background: var(--bg-2);
+    position: relative; overflow: hidden;
+  }
+  .card-img-placeholder::after {
+    content: ''; position: absolute; inset: 0;
+    background: var(--grad-card); opacity: 0.6;
+  }
+  .card-badge {
+    position: absolute; top: 12px; left: 12px;
+    padding: 4px 10px; border-radius: 99px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.3px;
+    text-transform: uppercase; z-index: 1;
+  }
+  .badge-new { background: rgba(139,92,246,0.85); color: white; }
+  .badge-hot { background: rgba(239,68,68,0.85); color: white; }
+  .badge-sale { background: rgba(16,185,129,0.85); color: white; }
+
+  .card-body { padding: 20px; }
+  .card-category { font-size: 11px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 6px; }
+  .card-title { font-size: 15px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
+  .card-footer { display: flex; align-items: center; justify-content: space-between; }
+  .card-price { font-size: 22px; font-weight: 900; background: var(--grad-hero); -webkit-background-clip: text; -webkit-text-fill-color:  #008080; ; }
+  .card-seller { font-size: 12px; color: var(--text-muted); }
+  .card-btn {
+    padding: 8px 16px; background: rgba(139,92,246,0.12);
+    border: 1px solid rgba(92, 246, 231, 0.25); border-radius: var(--radius-sm);
+    color: var(--purple-light); font-size: 13px; font-weight: 600;
+    cursor: none; transition: var(--transition);
+  }
+  .card-btn:hover { background: rgba(92, 246, 246, 0.25); border-color: var(--border-glow); }
+
+  /* ── ADD PRODUCT SECTION ───────────────────────────────── */
+  #sell { background: linear-gradient(180deg, transparent, rgba(139,92,246,0.04) 50%, transparent); }
+
+  .sell-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .sell-info h3 { font-size: 36px; font-weight: 800; letter-spacing: -1px; line-height: 1.2; margin-bottom: 20px; }
+  .sell-info p { color: var(--text-secondary); font-size: 16px; line-height: 1.7; margin-bottom: 32px; }
+  .sell-features { display: flex; flex-direction: column; gap: 14px; }
+  .sell-feat {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 15px; color: var(--text-secondary);
+  }
+  .feat-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.2);
+    display: flex; align-items: center; justify-content: center; font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .glass-form {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(40px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    box-shadow: var(--shadow-card);
+  }
+  .form-title { font-size: 22px; font-weight: 800; margin-bottom: 28px; }
+  .form-group { margin-bottom: 20px; }
+  .form-label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+  .form-input {
+    width: 100%; padding: 13px 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    color: var(--text-primary); font-size: 15px;
+    transition: var(--transition); outline: none;
+    font-family: inherit;
+  }
+  .form-input:focus { border-color: var(--border-glow); box-shadow: 0 0 0 3px rgba(139,92,246,0.15); background: rgba(255,255,255,0.06); }
+  .form-input::placeholder { color: var(--text-muted); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .upload-zone {
+    border: 2px dashed rgba(92, 246, 246, 0.25); border-radius: var(--radius-md);
+    padding: 32px; text-align: center; cursor: none;
+    transition: var(--transition);
+    background: rgba(139,92,246,0.03);
+  }
+  .upload-zone:hover { border-color: var(--border-glow); background: rgba(139,92,246,0.07); }
+  .upload-icon { font-size: 32px; margin-bottom: 10px; }
+  .upload-text { font-size: 14px; color: var(--text-muted); }
+  .upload-text span { color: var(--purple-light); font-weight: 600; }
+  .form-select {
+    appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235c5c7a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center;
+  }
+
+  /* ── AUTH SECTION ──────────────────────────────────────── */
+  #auth {
+    padding: 100px 24px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .auth-container {
+    width: 100%; max-width: 440px;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(40px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 48px 40px;
+    box-shadow: var(--shadow-card), var(--shadow-glow);
+    position: relative; overflow: hidden;
+  }
+  .auth-container::before {
+    content: ''; position: absolute; top: -60px; left: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(92, 246, 233, 0.2), transparent 70%);
+    pointer-events: none;
+  }
+  .auth-tabs {
+    display: flex; background: rgba(255,255,255,0.04);
+    border-radius: var(--radius-sm); padding: 4px; margin-bottom: 32px;
+  }
+  .auth-tab {
+    flex: 1; padding: 10px; text-align: center;
+    font-size: 14px; font-weight: 700; cursor: none;
+    border-radius: 8px; transition: var(--transition);
+    color: var(--text-muted);
+  }
+  .auth-tab.active { background: var(--grad-hero); color: white; }
+  .auth-logo { text-align: center; margin-bottom: 28px; }
+  .auth-logo-text { font-size: 24px; font-weight: 900; background: var(--grad-hero); -webkit-background-clip: text; color: #008080; }
+  .auth-logo-sub { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+
+  .auth-panel { display: none; }
+  .auth-panel.active { display: block; animation: fadeUp 0.4s ease; }
+
+  .divider { display: flex; align-items: center; gap: 12px; margin: 20px 0; }
+  .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .divider span { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+
+  .social-btn {
+    width: 100%; padding: 12px;
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); color: var(--text-secondary);
+    font-size: 14px; font-weight: 600; cursor: none; font-family: inherit;
+    transition: var(--transition);
+  }
+  .social-btn:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); color: var(--text-primary); }
+
+  /* ── FOOTER ─────────────────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 48px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: relative; z-index: 1;
+  }
+  .footer-logo { font-size: 18px; font-weight: 800; background: var(--grad-hero); -webkit-background-clip: text; }
+  .footer-copy { font-size: 13px; color: var(--text-muted); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--purple-light); }
+
+  /* ── SCROLL REVEAL ──────────────────────────────────────── */
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── GLOW AMBIENT ───────────────────────────────────────── */
+  .ambient {
+    position: fixed; pointer-events: none; z-index: 0;
+    border-radius: 50%; filter: blur(80px); opacity: 0.12;
+  }
+  .ambient-1 { width: 600px; height: 600px; background: #5cf6ec; top: -200px; left: -100px; }
+  .ambient-2 { width: 500px; height: 500px; background: #3b82f6; top: 40%; right: -150px; }
+  .ambient-3 { width: 400px; height: 400px; background: #5cf6da; bottom: 10%; left: 20%; }
+
+  /* ── RESPONSIVE ─────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero-stats { gap: 24px; }
+    .section { padding: 70px 20px; }
+    .sell-grid { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+  @media (max-width: 480px) {
+    .hero-stats { flex-direction: column; gap: 20px; }
+    .auth-container { padding: 32px 24px; }
+    .glass-form { padding: 28px 24px; }
+    .product-grid { grid-template-columns: 1fr; }
+  }
+  .nav-logo-container {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+     margin-top: 90px;
+    
+}
+
+.nav-logo-img {
+  border-radius: 15px;
+  display: 30%;
+  height: 80px;
+  width: auto;
+  margin-top: 90px;
+  object-fit: contain;
+}
+
+.nav-logo {
+  font-size: 20px;
+  font-weight: 800;
+  background: var(--grad-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>
+</head>
+<body>
+  <div class="nav-logo-container">
+  <img src="student market.jpeg" alt="Logo" class="nav-logo-img">
+  <div class="nav-logo">Student Market</div>
+</div>
+
+<!-- ── CURSOR ── -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- ── AMBIENT GLOWS ── -->
+<div class="ambient ambient-1"></div>
+<div class="ambient ambient-2"></div>
+<div class="ambient ambient-3"></div>
+
+<!-- ── LOADER ── -->
+<div id="loader">
+  <div class="loader-logo">Student Market Pro</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div style="font-size:13px;color:var(--text-muted);margin-top:8px;">Initializing marketplace…</div>
+</div>
+
+<!-- ── THREE.JS CANVAS ── -->
+<canvas id="three-canvas"></canvas>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">SMP ✦</div>
+  <ul class="nav-links">
+    <li><a href="#marketplace">Marketplace</a></li>
+    <li><a href="#sell">Sell</a></li>
+    <li><a href="#auth">Sign In</a></li>
+    <li><a href="#sell" class="nav-cta">Start Selling</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-badge"><span class="badge-dot"></span>Student-First Marketplace</div>
+    <h1 class="hero-title">Buy, Sell, and <span class="grad">Hustle</span> — The Student Marketplace</h1>
+    <p class="hero-sub">Trade textbooks, gadgets, furniture, and services with students across your campus. Safe, fast, and built just for you.</p>
+    <div class="hero-btns">
+      <a href="#marketplace" class="btn-primary">Browse Products</a>
+      <a href="#sell" class="btn-secondary">Sell Now →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num" id="cnt-users">0</div><div class="stat-label">Active Students</div></div>
+      <div class="stat"><div class="stat-num" id="cnt-items">0</div><div class="stat-label">Items Listed</div></div>
+      <div class="stat"><div class="stat-num" id="cnt-uni">0</div><div class="stat-label">Universities</div></div>
+      <div class="stat"><div class="stat-num" id="cnt-sold">0</div><div class="stat-label">Deals Closed</div></div>
+    </div>
+  </section>
+
+  <!-- ── MARKETPLACE ── -->
+  <section id="marketplace" class="section">
+    <div class="section-header reveal">
+      <div class="section-tag">✦ Marketplace</div>
+      <h2 class="section-title">Fresh Drops Near You</h2>
+      <p class="section-sub">Discover deals from students just like you — everything from tech to textbooks.</p>
+    </div>
+
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="tech">Tech</button>
+      <button class="filter-btn" data-cat="books">Books</button>
+      <button class="filter-btn" data-cat="furniture">Furniture</button>
+      <button class="filter-btn" data-cat="fashion">Fashion</button>
+      <button class="filter-btn" data-cat="services">Services</button>
+    </div>
+
+    <div class="product-grid" id="product-grid"></div>
+  </section>
+
+  <!-- ── SELL ── -->
+  <section id="sell" class="section" style="max-width:1200px;margin:0 auto;">
+    <div class="sell-grid">
+      <div class="sell-info reveal">
+        <div class="section-tag">✦ Sell Fast</div>
+        <h3>Turn your stuff into cash <span style="background:var(--grad-hero);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">instantly</span></h3>
+        <p>List in 60 seconds. Reach thousands of verified students on your campus and surrounding universities.</p>
+        <div class="sell-features">
+          <div class="sell-feat"><div class="feat-icon">⚡</div>Go live in under a minute</div>
+          <div class="sell-feat"><div class="feat-icon">🔒</div>Verified student buyers only</div>
+          <div class="sell-feat"><div class="feat-icon">💸</div>Zero platform fees for sellers</div>
+          <div class="sell-feat"><div class="feat-icon">📊</div>Real-time listing analytics</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="glass-form">
+          <div class="form-title">List Your Item</div>
+          <div class="form-group">
+            <label class="form-label">Title</label>
+            <input class="form-input" type="text" placeholder="e.g. MacBook Air M2 — Mint Condition" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Price ($)</label>
+              <input class="form-input" type="number" placeholder="0.00" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Category</label>
+              <select class="form-input form-select" style="cursor:none;">
+                <option value="">Select…</option>
+                <option>Tech</option>
+                <option>Books</option>
+                <option>Furniture</option>
+                <option>Fashion</option>
+                <option>Services</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Description</label>
+            <textarea class="form-input" rows="3" placeholder="Condition, specs, why you're selling…" style="resize:vertical;"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Photos</label>
+            <div class="upload-zone" id="upload-zone">
+              <div class="upload-icon">📷</div>
+              <div class="upload-text">Drop images here or <span>browse</span></div>
+              <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">JPG, PNG up to 10MB</div>
+            </div>
+            <input type="file" id="file-input" accept="image/*" multiple style="display:none;" />
+          </div>
+          <button class="btn-primary" style="width:100%;font-size:15px;border-radius:var(--radius-sm);cursor:none;" onclick="showToast('🎉 Listing submitted! Go live in seconds.')">
+            Publish Listing →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AUTH ── -->
+  <section id="auth">
+    <div class="section-header reveal" style="margin-bottom:40px;">
+      <div class="section-tag">✦ Join the Community</div>
+      <h2 class="section-title">Your campus store awaits</h2>
+    </div>
+    <div class="auth-container reveal">
+      <div class="auth-logo">
+        <div class="auth-logo-text">Student Market Pro</div>
+        <div class="auth-logo-sub">Join 48,000+ students already hustling</div>
+      </div>
+      <div class="auth-tabs">
+        <div class="auth-tab active" onclick="switchTab('login')">Sign In</div>
+        <div class="auth-tab" onclick="switchTab('register')">Create Account</div>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="auth-panel active" id="panel-login">
+        <div class="form-group">
+          <label class="form-label">University Email</label>
+          <input class="form-input" type="email" placeholder="you@university.edu" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input class="form-input" type="password" placeholder="••••••••" />
+        </div>
+        <button class="btn-primary" style="width:100%;margin-top:8px;cursor:none;" onclick="showToast('👋 Welcome back! Redirecting…')">Sign In</button>
+        <div class="divider"><span>or continue with</span></div>
+        <button class="social-btn" onclick="showToast('🔗 Google auth coming soon!')">🔵 Continue with Google</button>
+      </div>
+
+      <!-- REGISTER -->
+      <div class="auth-panel" id="panel-register">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input class="form-input" type="text" placeholder="Alex" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input class="form-input" type="text" placeholder="Kim" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">University Email</label>
+          <input class="form-input" type="email" placeholder="you@university.edu" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input class="form-input" type="password" placeholder="Min. 8 characters" />
+        </div>
+        <button class="btn-primary" style="width:100%;margin-top:8px;cursor:none;" onclick="showToast('✅ Account created! Check your email.')">Create Account</button>
+        <div class="divider"><span>or</span></div>
+        <button class="social-btn" onclick="showToast('🔗 Google auth coming soon!')">🔵 Continue with Google</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">SMP ✦</div>
+  <div class="footer-copy">© 2025 Student Market Pro. Built for students.</div>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Help</a>
+    <a href="#">Blog</a>
+  </div>
+</footer>
+
+<!-- ── TOAST ── -->
+<div id="toast" style="position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(80px);background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border:1px solid rgba(139,92,246,0.3);padding:14px 28px;border-radius:99px;font-size:15px;font-weight:600;color:var(--text-primary);z-index:9999;transition:transform 0.4s cubic-bezier(0.4,0,0.2,1),opacity 0.4s ease;opacity:0;white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,0.4);"></div>
+
+<script>
+/* ══════════════════════════════════════════════
+   THREE.JS — Animated 3D Background
+══════════════════════════════════════════════ */
+(function() {
+  const canvas = document.getElementById('three-canvas');
+  const scene  = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 200);
+  camera.position.set(0, 0, 30);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setClearColor(0x000000, 0);
+
+  // ── PARTICLE FIELD ──
+  const PARTICLE_COUNT = 1800;
+  const positions = new Float32Array(PARTICLE_COUNT * 3);
+  const colors    = new Float32Array(PARTICLE_COUNT * 3);
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    positions[i*3]   = (Math.random() - 0.5) * 120;
+    positions[i*3+1] = (Math.random() - 0.5) * 120;
+    positions[i*3+2] = (Math.random() - 0.5) * 80;
+    const t = Math.random();
+    // Purple-to-blue spectrum
+    colors[i*3]   = 0.35 + t * 0.2;
+    colors[i*3+1] = 0.15 + t * 0.3;
+    colors[i*3+2] = 0.8  + t * 0.2;
+  }
+  const pGeo = new THREE.BufferGeometry();
+  pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  pGeo.setAttribute('color',    new THREE.BufferAttribute(colors, 3));
+  const pMat = new THREE.PointsMaterial({ size: 0.28, vertexColors: true, transparent: true, opacity: 0.7, depthWrite: false });
+  scene.add(new THREE.Points(pGeo, pMat));
+
+  // ── FLOATING GEOMETRIC OBJECTS ──
+  const objects = [];
+  const shapes = [
+    new THREE.BoxGeometry(1.8, 1.8, 1.8),
+    new THREE.OctahedronGeometry(1.3),
+    new THREE.TetrahedronGeometry(1.5),
+    new THREE.IcosahedronGeometry(1.2),
+    new THREE.TorusGeometry(1, 0.35, 8, 16),
+  ];
+  const colors2 = [0x8b5cf6, 0x6366f1, 0x3b82f6, 0xa78bfa, 0x60a5fa];
+  for (let i = 0; i < 22; i++) {
+    const geo = shapes[i % shapes.length];
+    const mat = new THREE.MeshStandardMaterial({
+      color: colors2[i % colors2.length],
+      transparent: true, opacity: 0.18,
+      wireframe: Math.random() > 0.5,
+      metalness: 0.8, roughness: 0.2,
+    });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(
+      (Math.random() - 0.5) * 60,
+      (Math.random() - 0.5) * 50,
+      (Math.random() - 0.5) * 30 - 5
+    );
+    mesh.rotation.set(Math.random()*Math.PI, Math.random()*Math.PI, 0);
+    mesh.userData = {
+      rotX: (Math.random() - 0.5) * 0.006,
+      rotY: (Math.random() - 0.5) * 0.008,
+      floatSpeed: 0.3 + Math.random() * 0.5,
+      floatAmp:   0.4 + Math.random() * 0.6,
+      floatOff:   Math.random() * Math.PI * 2,
+      baseY: mesh.position.y,
+    };
+    scene.add(mesh);
+    objects.push(mesh);
+  }
+
+  // ── GLOWING SPHERES ──
+  const ambLight = new THREE.AmbientLight(0xffffff, 0.3);
+  scene.add(ambLight);
+  const ptLight1 = new THREE.PointLight(0x8b5cf6, 2, 60);
+  ptLight1.position.set(10, 10, 10);
+  scene.add(ptLight1);
+  const ptLight2 = new THREE.PointLight(0x3b82f6, 1.5, 60);
+  ptLight2.position.set(-15, -8, 5);
+  scene.add(ptLight2);
+
+  // ── MOUSE PARALLAX ──
+  let mx = 0, my = 0, targetMx = 0, targetMy = 0;
+  document.addEventListener('mousemove', e => {
+    targetMx = (e.clientX / window.innerWidth  - 0.5) * 8;
+    targetMy = (e.clientY / window.innerHeight - 0.5) * 5;
+  });
+
+  // ── SCROLL ──
+  let scrollY = 0;
+  window.addEventListener('scroll', () => { scrollY = window.scrollY; });
+
+  // ── RESIZE ──
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  // ── ANIMATION LOOP ──
+  let clock = new THREE.Clock();
+  function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+
+    // Smooth parallax
+    mx += (targetMx - mx) * 0.04;
+    my += (targetMy - my) * 0.04;
+    camera.position.x = mx;
+    camera.position.y = -my + scrollY * -0.008;
+    camera.lookAt(0, -scrollY * 0.004, 0);
+
+    // Animate objects
+    objects.forEach(obj => {
+      const d = obj.userData;
+      obj.rotation.x += d.rotX;
+      obj.rotation.y += d.rotY;
+      obj.position.y  = d.baseY + Math.sin(t * d.floatSpeed + d.floatOff) * d.floatAmp;
+    });
+
+    // Pulse lights
+    ptLight1.intensity = 1.5 + Math.sin(t * 0.8) * 0.5;
+    ptLight2.intensity = 1.2 + Math.cos(t * 0.6) * 0.4;
+    ptLight1.position.x = 10 + Math.sin(t * 0.3) * 5;
+    ptLight2.position.x = -15 + Math.cos(t * 0.25) * 4;
+
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+
+/* ══════════════════════════════════════════════
+   PRODUCT DATA
+══════════════════════════════════════════════ */
+const products = [
+  { emoji:'💻', title:'MacBook Air M2 — 8GB RAM, 256GB', price:'$780', category:'tech', seller:'@alex.cs', badge:'hot', cat:'tech' },
+  { emoji:'📚', title:'Calculus & Linear Algebra Bundle', price:'$28', category:'books', seller:'@priya.math', badge:'sale', cat:'books' },
+  { emoji:'🎧', title:'Sony WH-1000XM5 Headphones', price:'$195', category:'tech', seller:'@leo.music', badge:'new', cat:'tech' },
+  { emoji:'🪑', title:'IKEA MARKUS Office Chair', price:'$65', category:'furniture', seller:'@nina.arch', badge:null, cat:'furniture' },
+  { emoji:'📱', title:'iPhone 14 Pro — 256GB Deep Purple', price:'$650', category:'tech', seller:'@sam.bio', badge:'new', cat:'tech' },
+  { emoji:'🎒', title:'JanSport Superbreak Backpack', price:'$22', category:'fashion', seller:'@aya.design', badge:null, cat:'fashion' },
+  { emoji:'🖥️', title:'Dell 27" 4K Monitor, USB-C', price:'$280', category:'tech', seller:'@omar.dev', badge:'hot', cat:'tech' },
+  { emoji:'✏️', title:'Private Math Tutoring (1hr)', price:'$25/hr', category:'services', seller:'@julia.phd', badge:'new', cat:'services' },
+  { emoji:'📖', title:'Organic Chemistry — 11th Ed.', price:'$35', category:'books', seller:'@kai.chem', badge:'sale', cat:'books' },
+  { emoji:'🛋️', title:'West Elm Mid-Century Sofa', price:'$180', category:'furniture', seller:'@mei.interior', badge:null, cat:'furniture' },
+  { emoji:'👟', title:'Nike Air Max 97 — Size 42', price:'$90', category:'fashion', seller:'@dan.sport', badge:'sale', cat:'fashion' },
+  { emoji:'⌨️', title:'Keychron K2 Mechanical Keyboard', price:'$72', category:'tech', seller:'@rin.eng', badge:null, cat:'tech' },
+];
+
+function renderProducts(filter='all') {
+  const grid = document.getElementById('product-grid');
+  const list = filter === 'all' ? products : products.filter(p => p.cat === filter);
+  grid.innerHTML = list.map((p, i) => `
+    <div class="product-card reveal" style="animation-delay:${i*0.06}s" data-cat="${p.cat}">
+      <div class="card-img-placeholder">
+        <span style="position:relative;z-index:1;">${p.emoji}</span>
+        ${p.badge ? `<span class="card-badge badge-${p.badge}">${p.badge}</span>` : ''}
+      </div>
+      <div class="card-body">
+        <div class="card-category">${p.category}</div>
+        <div class="card-title">${p.title}</div>
+        <div class="card-footer">
+          <div>
+            <div class="card-price">${p.price}</div>
+            <div class="card-seller">${p.seller}</div>
+          </div>
+          <button class="card-btn" onclick="showToast('🛍️ Added to cart!')">Buy</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  // Re-trigger reveal
+  setTimeout(() => {
+    grid.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }, 50);
+}
+
+/* ══════════════════════════════════════════════
+   FILTER BUTTONS
+══════════════════════════════════════════════ */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    renderProducts(this.dataset.cat);
+  });
+});
+renderProducts();
+
+/* ══════════════════════════════════════════════
+   COUNTER ANIMATION
+══════════════════════════════════════════════ */
+function animateCounter(el, target, suffix='', duration=2000) {
+  let start = 0;
+  const step = target / (duration / 16);
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= target) { start = target; clearInterval(timer); }
+    el.textContent = Math.floor(start).toLocaleString() + suffix;
+  }, 16);
+}
+setTimeout(() => {
+  animateCounter(document.getElementById('cnt-users'), 48200, '+');
+  animateCounter(document.getElementById('cnt-items'), 12800, '+');
+  animateCounter(document.getElementById('cnt-uni'), 134, '+');
+  animateCounter(document.getElementById('cnt-sold'), 93000, '+');
+}, 600);
+
+/* ══════════════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════════════ */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ══════════════════════════════════════════════
+   CUSTOM CURSOR
+══════════════════════════════════════════════ */
+const cursor     = document.getElementById('cursor');
+const cursorRing = document.getElementById('cursor-ring');
+let cx = 0, cy = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
+(function moveCursor() {
+  requestAnimationFrame(moveCursor);
+  rx += (cx - rx) * 0.18;
+  ry += (cy - ry) * 0.18;
+  cursor.style.left = cx + 'px';
+  cursor.style.top  = cy + 'px';
+  cursorRing.style.left = rx + 'px';
+  cursorRing.style.top  = ry + 'px';
+})();
+document.querySelectorAll('a,button,.filter-btn,.card-btn,.auth-tab,.product-card,.upload-zone').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'translate(-50%,-50%) scale(2)';
+    cursorRing.style.width  = '60px';
+    cursorRing.style.height = '60px';
+    cursorRing.style.opacity = '0.5';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+    cursorRing.style.width  = '40px';
+    cursorRing.style.height = '40px';
+    cursorRing.style.opacity = '1';
+  });
+});
+
+/* ══════════════════════════════════════════════
+   AUTH TABS
+══════════════════════════════════════════════ */
+function switchTab(tab) {
+  document.querySelectorAll('.auth-tab').forEach((t,i) => {
+    t.classList.toggle('active', (i===0 && tab==='login') || (i===1 && tab==='register'));
+  });
+  document.getElementById('panel-login').classList.toggle('active', tab==='login');
+  document.getElementById('panel-register').classList.toggle('active', tab==='register');
+}
+
+/* ══════════════════════════════════════════════
+   FILE UPLOAD
+══════════════════════════════════════════════ */
+const uploadZone = document.getElementById('upload-zone');
+const fileInput  = document.getElementById('file-input');
+uploadZone.addEventListener('click', () => fileInput.click());
+uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.style.borderColor = 'var(--border-glow)'; });
+uploadZone.addEventListener('dragleave', () => { uploadZone.style.borderColor = ''; });
+uploadZone.addEventListener('drop', e => {
+  e.preventDefault(); uploadZone.style.borderColor = '';
+  const files = e.dataTransfer.files;
+  if (files.length) { uploadZone.querySelector('.upload-text').innerHTML = `✅ <span>${files.length} photo(s) ready</span>`; }
+});
+fileInput.addEventListener('change', function() {
+  if (this.files.length) { uploadZone.querySelector('.upload-text').innerHTML = `✅ <span>${this.files.length} photo(s) ready</span>`; }
+});
+
+/* ══════════════════════════════════════════════
+   TOAST
+══════════════════════════════════════════════ */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.transform = 'translateX(-50%) translateY(0)';
+  t.style.opacity   = '1';
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    t.style.transform = 'translateX(-50%) translateY(80px)';
+    t.style.opacity   = '0';
+  }, 3200);
+}
+
+/* ══════════════════════════════════════════════
+   LOADER
+══════════════════════════════════════════════ */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 2000);
+});
+</script>
+</body>
+</html>
