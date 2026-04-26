@@ -1,12 +1,15 @@
 
 <?php
 class Voiture {
+    private $marque, $modele;
 
-    public static function message() {
-        echo "<div class='message-box'>
-                <h1>🚗 Bienvenue</h1>
-                <p>Bienvenue dans le garage</p>
-              </div>";
+    public function __construct($m,$mo) {
+        $this->marque = $m;
+        $this->modele = $mo;
+    }
+
+    public function afficher() {
+        echo "$this->marque $this->modele <br>";
     }
 }
 ?>

@@ -33,6 +33,12 @@ class VoitureSport extends Voiture {
         echo "</div>";
     }
 }
+public static function message() {
+    echo "Bienvenue dans le garage";
+}
+
+// appel
+Voiture::message();
 ?>
 <!DOCTYPE html>
 <html lang="en">

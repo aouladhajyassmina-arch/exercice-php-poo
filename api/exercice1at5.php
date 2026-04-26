@@ -9,15 +9,19 @@ class Voiture {
     }
 
     public function afficher() {
-        echo "<div class='card'>
-                <h2>Voiture</h2>
-                <p><strong>Marque:</strong> $this->marque</p>
-                <p><strong>Modèle:</strong> $this->modele</p>
-              </div>";
+        // حماية XSS
+        $marque = htmlspecialchars($this->marque);
+        $modele = htmlspecialchars($this->modele);
+
+        return "
+        <div class='card'>
+            <h2>Voiture</h2>
+            <p><strong>Marque:</strong> $marque</p>
+            <p><strong>Modèle:</strong> $modele</p>
+        </div>";
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -41,16 +45,6 @@ body {
     width: 250px;
     text-align: center;
 }
-
-.card h2 {
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.card p {
-    margin: 5px 0;
-    color: #555;
-}
 </style>
 </head>
 
@@ -58,7 +52,9 @@ body {
 
 <?php
 $v1 = new Voiture("Toyota", "Corolla");
-$v1->afficher();
+
+// أفضل: echo بدل echo داخل function
+echo $v1->afficher();
 ?>
 
 </body>

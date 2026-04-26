@@ -1,14 +1,24 @@
 <?php
 session_start();
-$error = "";
-if (isset($_POST['login'])) {
-    $user = $_POST['username'];
-    $pass = $_POST['password'];
 
-    // Login simple (تجربة فقط)
-    if ($user == "admin" && $pass == "1234") {
+if (isset($_SESSION['user'])) {
+    header("Location: home.php");
+    exit();
+}
+
+$error = "";
+
+if (isset($_POST['login'])) {
+
+    $user = trim($_POST['username']);
+    $pass = trim($_POST['password']);
+
+    if ($user === "admin" && $pass === "1234") {
+
         $_SESSION['user'] = $user;
+
         header("Location: home.php");
+        exit(); 
     } else {
         $error = "Login ou mot de passe incorrect !";
     }
