@@ -11,6 +11,11 @@ class Voiture {
     public function afficher() {
         echo "$this->marque $this->modele <br>";
     }
+
+    // ✅ méthode statique
+    public static function message() {
+        return "Bienvenue dans le garage 🚗";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -51,10 +56,19 @@ body {
 </style>
 </head>
 <body>
+
+<div class="message-box">
     <h3>Exercice 1 atelier 6</h3>
+
+    <p>
+        <?php echo Voiture::message(); ?>
+    </p>
+
     <?php
-Voiture::message();
-?>
+    $v1 = new Voiture("Toyota", "Corolla");
+    $v1->afficher();
+    ?>
+</div>
 
     
 </body>
