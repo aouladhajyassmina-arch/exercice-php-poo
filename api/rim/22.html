@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hover Link Example</title>
+<style>
+/* Container for the link */
+.link-container {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+}
+
+/* The hidden link */
+.link-container .hidden-link {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background-color: #f1f1f1;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+/* Show hidden link when hovering */
+.link-container:hover .hidden-link {
+  display: block;
+}
+
+/* Style the visible link */
+.link-container a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.link-container a:hover {
+  color: #d2691e; /* color change on hover */
+}
+</style>
+</head>
+<body>
+
+<div class="link-container">
+  <a href="#">Main Link</a>
+  <a href="#" class="hidden-link">Secondary Link</a>
+</div>
+
+<div class="link-container">
+  <a href="#">Another Link</a>
+  <a href="https://google.com" class="hidden-link">Google</a>
+</div>
+
+</body>
+</html>     
+
+
+
+
+
+
+.link-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;        /* appears below */
+  left: 0;
+  background: #f3f3f3;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+
+.link-container:hover .submenu {
+  display: block;
+}
+
+.submenu a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.submenu a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.link-container {
+            position: relative;
+           display: inline-block;
+          }
+           .link-container .hidden-link {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background-color: #ca3d3d;
+  padding:1px;
+  border: 1px solid #2f0d0d;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.link-container:hover .hidden-link {
+  display: block;
+}
+.link-container a {
+  text-decoration: none;
+  color: #260a0a;
+  font-weight: bold;
+}

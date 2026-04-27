@@ -71,7 +71,6 @@ h1 {
 
 form {
     background: rgb(185, 155, 63);
-    padding: 20px;
     border-radius: 15px;
     width: 300px;
     margin: 20px auto;

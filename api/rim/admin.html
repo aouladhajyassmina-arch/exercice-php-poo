@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: rgb(244, 231, 136);
+            font-family: Georgia, serif;
+            color: rgb(54, 9, 6);
+        }
+
+        header {
+            background-color: rgb(61, 12, 8);
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+
+        .btn-custom {
+            background-color: rgb(54, 9, 6);
+            color: rgb(244, 231, 136);
+            border: 1px solid rgb(244, 231, 136);
+            transition: 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: rgb(244, 231, 136);
+            color: rgb(54, 9, 6);
+            border: 1px solid rgb(54, 9, 6);
+        }
+
+        .manage-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(54, 9, 6, 0.2);
+        }
+
+        h1 {
+            color: rgb(4, 31, 4);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .table-custom {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table-custom thead {
+            background-color: rgb(61, 12, 8);
+            color: rgb(244, 231, 136);
+        }
+
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .available { background-color: #d4edda; color: #155724; }
+        .loaned { background-color: #f8d7da; color: #721c24; }
+
+       
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate { animation: fadeUp 0.8s ease-out both; }
+    </style>
+    <title>Library Management</title>
+</head>
+<body>
+
+<header>
+    <div class="container d-flex justify-content-between align-items-center">
+        <a href="books.html" class="btn btn-custom"><i class="bi bi-arrow-left"></i> Back to Catalog</a>
+        
+    </div>
+</header>
+
+<main class="container">
+    <h1 class="animate"><i class="bi bi-gear-fill"></i> Inventory Management</h1>
+
+    <div class="manage-card mb-5 animate">
+        <h4 class="mb-4"><i class="bi bi-plus-circle"></i> Add a New Book</h4>
+        <form class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label">Book Title</label>
+                <input type="text" class="form-control" placeholder="e.g. Harry Potter">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Author</label>
+                <input type="text" class="form-control" placeholder="e.g. J.K Rowling">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Category</label>
+                <select class="form-select">
+                    <option>Fantasy</option>
+                    <option>Poetry</option>
+                    <option>Romance</option>
+                    <option>Mystery</option>
+                </select>
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <button type="submit" class="btn btn-custom w-100">Add Book</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="manage-card animate" style="animation-delay: 0.2s;">
+        <h4 class="mb-4"><i class="bi bi-list-stars"></i> Book List</h4>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>Cover</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="fantacyy1.webp" width="40" height="50" style="border-radius: 5px; object-fit: cover;"></td>
+                        <td><strong>Harry Potter</strong></td>
+                        <td>J.K Rowling</td>
+                        <td><span class="status-badge available">Available</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
+                            <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="mystery2.jpg" width="40" height="50" style="border-radius: 5px; object-fit: cover;"></td>
+                        <td><strong>Gone Girl</strong></td>
+                        <td>Gillian Flynn</td>
+                        <td><span class="status-badge loaned">Loaned</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
+                            <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="poetry3.jfif" width="40" height="50" style="border-radius: 5px; object-fit: cover;"></td>
+                        <td><strong>Leaves of Grass</strong></td>
+                        <td>Walt Whitman</td>
+                        <td><span class="status-badge loaned">Loaned</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
+                            <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td><img src="fantacy4.jfif" width="40" height="50" style="border-radius: 5px; object-fit: cover;"></td>
+                        <td><strong>The Witcher</strong></td>
+                        <td>Andrzej Sapkowski</td>
+                        <td><span class="status-badge available">Available</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></button>
+                            <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

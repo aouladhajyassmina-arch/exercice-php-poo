@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <img src="icons/icon.png" width="40" style="float:left;">
+    <h1 style="text-align:right;">Bienvenue dans la page d'accueil</h1>
+</header>
+
+<!-- Section Animation -->
+<section style="height:2px;">
+    <div style="
+        width:200px;
+        height:2px;
+        background:linear-gradient(to right, grey, blue, grey);
+        animation:mouv 3s linear infinite;
+    "></div>
+</section>
+
+<!-- Section Gauche -->
+<section>
+    <h2>Menu</h2>
+    <p><a href="Politique/default.html" style="text-shadow:1px 1px 1px black;">Politique</a></p>
+    <p><a href="Sport/default.html" style="text-shadow:1px 1px 1px black;">Sport</a></p>
+    <p><a href="Contact.html" style="text-shadow:1px 1px 1px black;">Contact</a></p>
+</section>
+
+<!-- Section Centrale -->
+<section>
+    <h2>Quelque chose d'important</h2>
+    <p>Résumé de l’événement</p>
+    <p>Sources supplémentaires</p>
+    <p>Cliquez <a href="https://www.w3schools.com" target="_blank">ici</a> pour plus d’informations</p>
+</section>
+
+<!-- Section Droite -->
+<section>
+    <h2>Autres articles</h2>
+    <ul style="list-style-image:url('icons/puce.png');">
+        <li><a href="#" style="text-transform:uppercase;">Article 1</a></li>
+        <li><a href="#" style="text-transform:uppercase;">Article 2</a></li>
+        <li><a href="#" style="text-transform:uppercase;">Article 3</a></li>
+    </ul>
+</section>
+
+<footer>
+    <p style="text-align:center;">Copyright © 2022</p>
+</footer>
+
+<!-- animation code -->
+<style>
+@keyframes mouv{
+    from{margin-left:0;}
+    to{margin-left:100%;}
+}
+</style>
+
+</body>
+</html>

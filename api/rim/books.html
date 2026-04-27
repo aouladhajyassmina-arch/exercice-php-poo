@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">    
+          <style>
+ h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2em;
+  font-weight: bold;
+  background: linear-gradient(90deg,#3f0f0f, #8d2d2d, #9d4949 ); 
+  -webkit-background-clip: text;   
+  -webkit-text-fill-color: transparent; 
+  background-clip: text;           
+}
+@keyframes fadeLeft {  
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.animate {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+.fade-up {
+  animation-name: fadeUp;
+}
+
+.fade-left {
+  animation-name: fadeLeft;
+}
+
+.fade-right {
+  animation-name: fadeRight;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+
+#pict {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.position-relative:hover #pict {
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(54, 9, 6, 0.5);
+}
+
+#empr {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#empr:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+ @keyframes mouv{
+      from{margin-left:0;}
+      to{margin-left:100%;}}
+            body{
+                background-color: rgb(244, 231, 136);
+                margin-bottom: 100px;
+                
+            }
+            h1{
+                color: rgb(4, 31, 4);
+                font-size: 2em;
+                margin-left: 420px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                
+            }
+         .element1{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding:30px;
+                }
+       h3{
+      text-align: center;
+      font-size: 1em;
+      padding:10px;
+     }
+     p{
+      text-align: center;
+      padding-left: 5px;
+      font-size: 1em;
+     }
+     h3:hover{color: rgb(54, 9, 6)}
+      .element1 a{
+         margin:25px ;
+         }
+         #pict{
+            border: 1px solid pink;
+            border-radius: 20px;
+          
+         }
+       #empr{
+         font-size: 14px;
+         font-weight: bolder;
+         margin-left: 16px;
+         padding: 10px;
+         text-decoration: none;
+          background-color:  rgb(54, 9, 6);
+         color: rgb(244, 231, 136);
+         border: 1px solid rgb(244, 231, 136);
+         align-items: center;
+         border-radius: 5px ;
+      }
+      h2{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      #empr:hover{
+         color: rgb(54, 9, 6);
+         background-color: rgb(244, 231, 136);
+      }
+      #links{
+        align-items: center;
+        gap: 50px;
+        margin-left: 15px;
+       
+      }
+      .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease;
+         }
+         .position-relative{
+          border: 1px solid brown;
+         
+      
+       }
+         .position-relative:hover .overlay{opacity: 1;}
+         i{
+      margin-right: 5px;
+      font-size: 0.9em;
+       color: rgb(54, 9, 6);
+           }
+           #icon{
+             font-size: 1.5em;
+           }
+           header{
+        background-color: rgb(61, 12, 8);
+           }
+           .nav-item i{
+            color: rgb(230, 230, 98);
+           }
+
+           .link-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;        
+  left: 0;
+ 
+ padding: 1px;
+ }
+
+
+.link-container:hover .submenu {
+  display: block;
+}
+
+.submenu a {
+  text-decoration: none;
+  color:rgb(54, 9, 6) ;
+  background-color: brown;
+  border: 1px solid rgb(54, 9, 6) ;
+  padding: 2px;
+   border-radius: 6px;
+  display: block;
+ font-weight: bold;
+}
+
+.submenu a:hover {
+ background-color: rgb(54, 9, 6);
+ color:  rgb(230, 236, 112);
+}
+ @media (max-width: 768px){
+  .element1{
+    flex-direction: column;
+                gap: 70px;
+                align-items: center;
+  }
+  .links{
+       align-items: flex-start;
+        gap: 10px;
+        margin-left: 0;
+  }
+  h1{
+    margin-left: 26px;
+    font-size: 1.8em;
+  }
+ }
+        </style>
+    </head>
+    <body>
+      
+        <header>
+              <div id="links" class="nav nav-tabs text-dark">
+            <li class="nav-item"><a href="indexproject.html" class="nav-link text-dark"><i id="icon" class="bi bi-house-door"></i></a></li>
+            <li class="nav-item"><a href="aboutus.html" class="nav-link text-dark"><i id="icon" class="bi bi-people"></i></a></li>
+            <li class="nav-item"><a href="contactt.html" class="nav-link text-dark"><i id="icon" class="bi bi-chat-dots"></i></a></li>
+            <li class="nav-item"><a href="books.html" class="nav-link text-dark"><i id="icon" class="bi bi-book"></i></a></li>
+             <li class="nav-item"><a href="help.html" class="nav-link"><i id="icon" class="bi bi-question"></i></a></li>
+          </div> </header><br>
+        <main>
+            <div style="
+        width:200px;
+        height:3px;
+        background:linear-gradient(to right, rgb(216, 197, 89),rgb(54, 9, 6),rgb(230, 245, 99) );
+        animation:mouv 7s linear infinite;
+        "></div><br><br>
+            <h1 class="animate fade-up"><i class="bi bi-balloon-heart"></i>
+
+                Discover Our New collection
+
+                <i class="bi bi-balloon-heart"></i>
+            </h1><br><br>
+            <div style="
+        width:200px;
+        height:3px;
+        background:linear-gradient(to right, rgb(216, 197, 89),rgb(54, 9, 6),rgb(230, 245, 99) );
+        animation:mouv 7s linear infinite;
+        "></div><br>
+       
+    <div>
+      <hr width="100%" color="rgb(54, 9, 6)"><br>
+        <h2  class="animate fade-left"><i class="bi bi-caret-right"></i>Fantasy</h2><br>
+         <div class="element1">
+            <div class="position-relative animate fade-up delay-1"><a href="#"><img id="pict"src="fantacyy1.webp" height="250px" width="200px"></a><div class="overlay"><p>A young boy discovers he’s a wizard and begins studying magic at Hogwarts School of Witchcraft and Wizardry.
+          He forms strong friendships while uncovering dark secrets about his past and the rise of Voldemort.
+          Each year brings new challenges that shape his courage and prepare him for the fight against evil. A journey of bravery.
+          </p></div><br><br><h3>Harry Potter</h3><p>By J.K Rowling</p><br><div class="d-flex"><div><a id="empr" href="">Loan Now</a></div><div class="link-container"><a class="text-decoration-line-through" id="empr" href="#">Available</a><div class="submenu"><a href="#" class="hidden-link">Reserve</a></div></div></div></div>
+            <div class="position-relative animate fade-up delay-2"><a href="#"><img id="pict" src="fantacy3.jpg" height="250px" width="200px" ></a><div class="overlay"><p>Bilbo Baggins, a quiet hobbit, is swept into an adventure with a group of dwarves and the wizard Gandalf to reclaim a stolen treasure.
+          On the journey, he faces trolls, elves, goblins, and the creature Gollum, from whom he wins a powerful ring.
+          His courage grows as he helps the dwarves confront the dragon Smaug and discovers a hero within himself.</p></div><br><br><h3>The Hobbit</h3><p>By J.R.R Tolkien</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#" >Available</a></div>
+            <div class="position-relative animate fade-up delay-3"><a href="#"><img id="pict" src="fantacy2.jpg" height="250px" width="200px" ></a><div class="overlay"><p>Frodo Baggins inherits a powerful and dangerous ring and must destroy it to prevent the dark lord Sauron from conquering Middle-earth.
+          He joins a fellowship of allies who help him on a perilous journey filled with battles, betrayals, and ancient magic.
+          As darkness spreads, unlikely heroes rise, and the fate of the world rests on courage and sacrifice.</p></div><br><br><h3>The Lord of the Rings</h3><p>Bt J.R.R Tolkien</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-4"><a href="#"><img id="pict" src="fantacy5.jfif" height="250px" width="200px"></a><div class="overlay"><p>A group of children discover the magical world of Narnia, a land filled with talking animals, mythical creatures, and ancient prophecies.
+          Guided by the noble lion Aslan, they fight against evil forces and help restore peace and harmony to the realm.
+          Each adventure teaches them courage, faith, and the power of doing what is right.</p></div><br><br><h3>The Chronicles of Narnia</h3><p>By C.S Lewis</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-5"><a href="#"><img id="pict" src="fantacy4.jfif" height="250px" width="200px"></a><div class="overlay"><p>Geralt of Rivia, a monster-hunting mutant known as a Witcher, travels a brutal and magical world taking dangerous contracts for coin.
+          Caught between political conflicts, dark magic, and moral dilemmas, he struggles to stay true to his own code.
+          His fate becomes bound to Ciri, a child of prophecy, whose powers could change the world forever.
+          </p></div><br><br><h3>The Witcher</h3><p>By Andrzej Sapkowski</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+          </div><br><br><br>
+          <hr width="100%" color="rgb(54, 9, 6)"><br>
+          <h2  class="animate fade-left"><i class="bi bi-caret-right"></i>Poetry</h2><br>
+         <div class="element1">
+            <div class="position-relative animate fade-up delay-1"><a href="#"><img id="pict" src="poetry1.jpg" height="250px" width="200px"></a><div class="overlay"><p>A collection of poems exploring growth, healing, and self-discovery through love, loss, and identity.
+          The poems guide readers through heartbreak, resilience, and the beauty of reclaiming one’s power.
+          Each chapter celebrates personal transformation and the cycles of life, grief, and renewal.
+          Healing blooms in pain and strength.</p></div><br><br><h3>The Sun and Her Flowers</h3><p>By Rupi Kaur</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-2"><a href="#"><img id="pict" src="poetry2.jpg" height="250px" width="200px" ></a><div class="overlay"><p>A collection of poems and prose about survival, love, trauma, and femininity.
+           The work explores pain, healing, empowerment, and the complexities of human emotions.
+           Each section offers raw, intimate reflections on growth, strength, and self-acceptance.
+           Words mend hearts and broken souls.Through tears, courage is born.
+          Healing whispers in quiet moments.</p></div><br><br><h3>Milk and Honey</h3><p>By Rupi Kaur</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-3"><a href="#"><img id="pict" src="poetry3.jfif" height="250px" width="200px" ></a><div class="overlay"><p>A collection of poems celebrating nature, individuality, and the human spirit.
+            Whitman explores life, democracy, love, and the interconnectedness of all beings.
+            The work emphasizes freedom, self-expression, and the beauty of everyday experiences.
+            Life flows through earth and soul.Joy and sorrow shape our path.
+           Every soul dances with the world.</p></div><br><br><h3>Leaves of Grass</h3><p>By Walt Whitman</p><br><div class="d-flex"><div><a id="empr" href="">Loan Now</a></div><div class="link-container"><a class="text-decoration-line-through" id="empr" href="#">Available</a><div class="submenu"><a href="#" class="hidden-link">Reserve</a></div></div></div></div>
+            <div class="position-relative animate fade-up delay-4"><a href="#"><img id="pict" src="poetry4.jfif" height="250px" width="200px"></a><div class="overlay"><p>A modernist poem reflecting the disillusionment and fragmentation of post-World War I society.
+           It weaves together myths, voices, and literary allusions to explore despair and renewal.
+            The work examines human suffering, spiritual emptiness, and the search for meaning.
+           Chaos yields glimpses of hope.Fragments mirror a broken world.</p></div><br><br><h3>The Waste Land</h3><p>By T.S Eliot</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-5"><a href="#"><img id="pict" src="poetryy5.jfif" height="250px" width="200px"></a><div class="overlay"><p>A collection of intense and personal poems exploring identity, mental anguish, and rebirth.
+            Plath confronts themes of death, selfhood, love, and the struggle for creative freedom.
+             The work is known for its vivid imagery, emotional depth, and raw honesty.
+               Pain transforms into powerful art. Darkness reveals the inner self.</p></div><br><br><h3>Ariel</h3><p>By Sylvia Plath</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+          </div><br><br><br>
+          <hr width="100%" color="rgb(54, 9, 6)"><br>
+           <h2  class="animate fade-left"><i class="bi bi-caret-right"></i>Romance</h2><br>
+         <div class="element1">
+            <div class="position-relative animate fade-up delay-1"><a href="#"><img id="pict" src="romance1.jfif" height="250px" width="200px"></a><div class="overlay"><p>Elizabeth Bennet navigates love, family, and social expectations in 19th-century England.
+           She meets the proud Mr. Darcy, and misunderstandings challenge their feelings.
+           hrough growth and reflection, they learn about prejudice and true love.
+          Wit, intelligence, and integrity guide Elizabeth’s choices.
+            The novel explores class and romance.
+          </p></div><br><br><h3>Pride and Prejudice</h3><p>By Jane Austen</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-2"><a href="#"><img id="pict" src="romance2.jpg" height="250px" width="200px" ></a><div class="overlay"><p>Noah and Allie share a passionate love that faces obstacles of class and circumstance.
+            Years apart test their devotion, yet their memories of each other remain strong.
+             Through challenges, misunderstandings, and the passage of time, their bond endures.
+             The story reflects on memory, commitment, and the power of true love.
+             </p></div><br><br><h3>The Notebook</h3><p>By Nicholas Sparks</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-3"><a href="#"><img id="pict" src="romance3.jfif" height="250px" width="200px" ></a><div class="overlay"><p>Louisa Clark becomes a caregiver for Will Traynor, a man left paralyzed after an accident.
+           Their unlikely friendship grows, and Louisa tries to show him life’s joys again.
+           As feelings deepen, they face difficult choices about autonomy, love, and hope.
+                The story explores compassion, personal growth, and the impact of emotional connections.
+                </p></div><br><br><h3>Me before You</h3><p>By Jojo Moyes</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-4"><a href="#"><img id="pict" src="romance4.jpg" height="250px" width="200px"></a><div class="overlay"><p>Claire Randall, a World War II nurse, is mysteriously transported back to 18th-century Scotland.
+           She becomes entangled in political intrigue, clan conflicts, and the Jacobite uprisings.
+           Claire meets and falls in love with Jamie Fraser, a brave Scottish warrior.
+              Their passion and loyalty are tested by danger and cultural differences.
+             </p></div><br><br><h3>Outlander</h3><p>By Diana Gabaldon</p><br><div class="d-flex"><div><a id="empr" href="">Loan Now</a></div><div class="link-container"><a class="text-decoration-line-through" id="empr" href="#">Available</a><div class="submenu"><a href="#" class="hidden-link">Reserve</a></div></div></div></div>
+            <div class="position-relative animate fade-up delay-5"><a href="#"><img id="pict" src="romance6.jfif" height="250px" width="200px"></a><div class="overlay"><p>Hazel Grace Lancaster, a teenager with cancer, meets Augustus Waters at a support group.
+           They form a deep bond, sharing love, humor, and the struggles of illness.
+           Together, they explore life, mortality, and what it means to leave a mark.
+                Their journey is filled with hope, heartbreak, and moments of profound connection.
+                The novel reflects on love.</p></div><br><br><h3>The Fault in Our Stars</h3><p>By John Green</p><br><div class="d-flex"><div><a id="empr" href="">Loan Now</a></div><div class="link-container"><a class="text-decoration-line-through" id="empr" href="#">Available</a><div class="submenu"><a href="#" class="hidden-link">Reserve</a></div></div></div></div>
+         </div><br><br><br><hr width="100%" color="rgb(54, 9, 6)"><br>      
+          <h2  class="animate fade-left"><i class="bi bi-caret-right"></i>Mystery</h2><br>
+         <div class="element1">
+            <div class="position-relative animate fade-up delay-1"><a href="#"><img id="pict" src="mystery1.jpg" height="250px" width="200px"></a><div class="overlay"><p>Detective Sherlock Holmes uses keen observation and deduction to solve complex mysteries.
+           Alongside Dr. John Watson, he unravels crimes that baffle the police.
+          Holmes faces cunning villains, dangerous plots, and puzzling clues with brilliance.
+           The stories showcase logic, reasoning, and the thrill of investigation.
+            Each case highlights human nature.</p></div><br><br><h3>Sherlock Holmes</h3><p>By Arthur Conan Doyle</p><br><div class="d-flex"><div><a id="empr" href="">Loan Now</a></div><div class="link-container"><a class="text-decoration-line-through" id="empr" href="#">Available</a><div class="submenu"><a href="#" class="hidden-link">Reserve</a></div></div></div></div>
+            <div class="position-relative animate fade-up delay-2"><a href="#"><img id="pict" src="mystery2.jpg" height="250px" width="200px" ></a><div class="overlay"><p>Nick and Amy’s marriage unravels when Amy mysteriously disappears on their anniversary.
+           Media frenzy, lies, and secrets fuel suspicion and tension.
+           As the investigation unfolds, dark truths and twisted manipulations are revealed.
+           he story explores deceit, perception, and the complexity of relationships.
+             Suspense builds with psychological depth.</p></div><br><br><h3>Gone Girl</h3><p>By Gillian Flynn</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-3"><a href="#"><img id="pict" src="mystery3.jpg" height="250px" width="200px" ></a><div class="overlay"><p>Detective Hercule Poirot investigates a murder aboard the luxurious Orient Express.
+            Each passenger becomes a suspect as secrets and motives come to light.
+            Poirot uses logic and observation to unravel the complex web of lies.
+            The story blends suspense and clever deduction.
+            Twists and revelations keep readers guessing until the end.</p></div><br><br><h3>Murder on the Orient Express</h3><p>By Agatha Christie</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-4"><a href="#"><img id="pict" src="mystery4.jfif" height="250px" width="200px"></a><div class="overlay"><p>Three women in a coastal town navigate friendship, secrets, and personal struggles.
+             Their lives intersect through school, family, and hidden tensions.
+                Beneath the surface, lies, gossip, and past traumas build suspense.
+                The story explores relationships, domestic issues, and the power of truth.
+                  Secrets unravel with dramatic and emotional consequences.
+            </p></div><br><br><h3>Big Little Lies</h3><p>By Liane Moriarty</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-5"><a href="#"><img id="pict" src="mystery5.jfif" height="250px" width="200px"></a><div class="overlay"><p>Symbologist Robert Langdon uncovers a secret society while investigating a murder at the Louvre.
+          Clues in art, history, and religion lead him on a thrilling quest.
+          He teams up with cryptologist Sophie Neveu to solve a deadly puzzle.
+             The story blends mystery, conspiracy, and intellectual challenges.
+              Secrets are revealed along the way.</p></div><br><br><h3>The Da Vinci Code</h3><p>By Dan Brown</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+          </div></div><br><br><br>
+          <hr width="100%" color="rgb(54, 9, 6)"><br>
+          <h2  class="animate fade-left"><i class="bi bi-caret-right"></i>History </h2><br>
+         <div class="element1">
+            <div class="position-relative animate fade-up delay-1"><a href="#"><img id="pict" src="history1.jpg" height="250px" width="200px"></a><div class="overlay"><p>A sweeping history of humankind, exploring the evolution of Homo sapiens.
+          Harari examines cognitive, agricultural, and scientific revolutions that shaped society.
+          He investigates culture, religion, politics, and economics through the ages.
+          The book blends history, science, and philosophy to understand human development.
+           
+          </p></div><br><br><h3>Sapiens</h3><p>By Yuval Noah Harari</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-2"><a href="#"><img id="pict" src="history3.jpg" height="250px" width="200px" ></a><div class="overlay"><p>The book explores why some civilizations advanced faster than others throughout history.
+            Diamond examines the roles of geography, agriculture, and technology in shaping societies.
+             He highlights how guns, germs, and steel influenced conquest and power.
+             The work blends history, biology, and anthropology to explain global inequality.
+             </p></div><br><br><h3>Guns,Germs,and Steem</h3><p>By Jared Frank</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-3"><a href="#"><img id="pict" src="history2.jpg" height="250px" width="200px" ></a><div class="overlay"><p>Anne Frank, a young Jewish girl, records her life in hiding during World War II.
+            Her diary captures fear, hope, and the daily struggles under Nazi occupation.
+            She reflects on family, friendship, and her dreams for the future.
+             The book reveals the resilience of the human spirit amid persecution.
+             It is both a personal memoir and a historical testimony.</p></div><br><br><h3>The Diary of Anne Frank</h3><p>By Anne Frank</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+            <div class="position-relative animate fade-up delay-4"><a href="#"><img id="pict" src="history4.jpg" height="250px" width="200px"></a><div class="overlay"><p>Two self‑taught bicycle mechanics, Wilbur Wright and Orville Wright, defied expectations to invent and fly the first powered, heavier‑than‑air airplane in 1903.
+            They overcame poverty, lack of formal education and repeated failures with grit and relentless experimentation.
+            Their Sister and their supportive family provided the stability.</p></div><br><br><h3>The White Brothers</h3><p>By David McCullough</p><br><div class="d-flex"><div><a id="empr" href="">Loan Now</a></div><div class="link-container"><a class="text-decoration-line-through" id="empr" href="#">Available</a><div class="submenu"><a href="#" class="hidden-link">Reserve</a></div></div></div></div>
+            <div class="position-relative animate fade-up delay-5"><a href="#"><img id="pict" src="history5.jfif" height="250px" width="200px"></a><div class="overlay"><p>The book explores Abraham Lincoln’s leadership during the American Civil War.
+            Lincoln appointed former political opponents to his cabinet, valuing talent over rivalry.
+             It highlights his skill in managing conflicts, and political challenges.
+              The work examines the strategies, decisions, and moral courage that guided the nation.
+              </p></div><br><br><h3>Team of Rivals</h3><p>By Doris Kearns Goodwin</p><br><a id="empr" href="">Loan Now</a><a id="empr" href="#">Available</a></div>
+          </div>
+        </main>
+    </body>
+</html>
