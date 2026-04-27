@@ -560,7 +560,7 @@ li {
     <div class="grid atelier4 hidden">
       <div class="card">
         <h3>Séance atelier 4</h3>
-        <a href="store.php">Exercice 1</a>
+        <a href="exercice1at4.php">Exercice 1</a>
         <a href="r8.pdf">Voir rapport</a>
         <a href="https://github.com/aouladhajyassmina-arch/atelie4r.git">Voir GitHub</a>
       </div>
