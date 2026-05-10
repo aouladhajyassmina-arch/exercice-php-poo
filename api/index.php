@@ -560,7 +560,6 @@ li {
     <div class="grid atelier4 hidden">
       <div class="card">
         <h3>Séance atelier 4</h3>
-        <a href="exercice1at4.php">Exercice 1</a>
         <a href="r8.pdf">Voir rapport</a>
         <a href="https://github.com/aouladhajyassmina-arch/atelie4r.git">Voir GitHub</a>
       </div>
@@ -628,7 +627,7 @@ li {
         <h3>Séance atelier 8</h3>
         <a href="exercice1at8.php">Voir exercice 1</a>
         <a href="r15.pdf">Voir rapport</a>
-         <a href="https://github.com/aouladhajyassmina-arch/atelier8.git">Repo GitHub</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier-8.git">Repo GitHub</a>
       </div>
       </section>
  
@@ -654,39 +653,6 @@ li {
   </div>
 </div>
 
-<!-- ATELIER POWERPOINT -->
-<button onclick="toggleAtelier('ppt')">Ateliers PowerPoint</button>
-<div class="grid ppt hidden">
-  <div class="card">
-    <h3>PowerPoint 1</h3>
-    <a href="Roma Papolion.pptx">Voir présentation</a>
-  </div>
-  <div class="card">
-    <h3>PowerPoint 1</h3>
-    <a href="THE BEST CITY IN THE WORLD.pptx">Voir présentation</a>
-  </div>
-  <div class="card">
-    <h3>PowerPoint 1</h3>
-    <a href="film avec logo.pptx">Voir présentation</a>
-  </div>
-  <div class="card">
-    <h3>PowerPoint 1</h3>
-    <a href="Ferrari.pptx">Voir présentation</a>
-  </div>
-</div>
-
-<!-- ATELIER WEB -->
-<button onclick="toggleAtelier('web')">HTML / CSS / JavaScript</button>
-<div class="grid web hidden">
-  <div class="card">
-    <h3>Projet Web 1</h3>
-    <a href="student-market-pro.html">Voir projet</a>
-  </div>
-  <div class="card">
-    <h3>Projet Web 2</h3>
-    <a href="#">Voir projet</a>
-  </div>
-</div>
 
 
 
