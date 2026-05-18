@@ -637,8 +637,32 @@ li {
      <div class="card">
         <h3>Séance atelier 9</h3>
        
-        <a href="r15.pdf">Voir rapport</a>
+        <a href="">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier-9.git">Repo GitHub</a>
+      </div>
+      </section>
+       <!-- ATELIER 10 -->
+    </div>
+     <button onclick="toggleAtelier('atelier10')">Atelier 10</button>
+
+  <div class="grid atelier1 hidden">
+     <div class="card">
+        <h3>Séance atelier 10</h3>
+       
+        <a href="">Voir rapport</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier-10.git">Repo GitHub</a>
+      </div>
+      </section>
+   <!-- ATELIER 11 -->
+    </div>
+     <button onclick="toggleAtelier('atelier11')">Atelier 11</button>
+
+  <div class="grid atelier1 hidden">
+     <div class="card">
+        <h3>Séance atelier 11</h3>
+       
+        <a href="">Voir rapport</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier-11.git">Repo GitHub</a>
       </div>
       </section>
  
