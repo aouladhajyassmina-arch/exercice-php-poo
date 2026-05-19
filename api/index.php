@@ -664,6 +664,17 @@ li {
         <a href="">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier-11.git">Repo GitHub</a>
       </div>
+      <!-- ATELIER 12 -->
+    </div>
+     <button onclick="toggleAtelier('atelier12')">Atelier 12</button>
+
+  <div class="grid atelier1 hidden">
+     <div class="card">
+        <h3>Séance atelier 12</h3>
+       
+        <a href="">Voir rapport</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier-12.git">Repo GitHub</a>
+      </div>
       </section>
  
 
