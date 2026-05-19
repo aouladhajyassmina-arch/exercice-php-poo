@@ -465,7 +465,7 @@ li {
 
 <section class="hero">
     <!-- IMAGE -->
-    <img src="me2.png" alt="Photo Yasmina">
+    <img src="me3.jpeg" alt="Photo Yasmina">
 
     <h1>Bienvenue sur mon portfolio 🔔</h1>
     <p>Je suis Yasmina, stagiaire en développement web. Voici mes ateliers PHP.</p>
