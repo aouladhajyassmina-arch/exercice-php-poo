@@ -12,14 +12,13 @@ class Manager extends Employe {
 }
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+<meta charset="UTF-8">
+<title>Employés</title>
+
+<style>
 body {
     font-family: Arial, sans-serif;
     background: #f5f7fa;
@@ -53,9 +52,10 @@ h2 {
 }
 </style>
 </head>
+
 <body>
-     <h3>Exercice 3 atelier 6</h3>
-     <div class="card">
+
+<div class="card">
     <h2>Employé</h2>
     <?php
     $e = new Employe();
@@ -71,6 +71,5 @@ h2 {
     ?>
 </div>
 
-    
 </body>
 </html>

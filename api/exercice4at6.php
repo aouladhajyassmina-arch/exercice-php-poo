@@ -1,4 +1,3 @@
-
 <?php
 class Personne {
     protected $nom;
@@ -35,14 +34,13 @@ class Etudiant extends Personne {
 }
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+<meta charset="UTF-8">
+<title>Étudiant</title>
+
+<style>
 body {
     font-family: Arial, sans-serif;
     background: #eef2f7;
@@ -73,13 +71,13 @@ body {
 }
 </style>
 </head>
+
 <body>
-     <h3>Exercice 4 atelier 6</h3>
-     <?php
+
+<?php
 $et = new Etudiant("Ahmed", 20, 15);
 $et->afficher();
 ?>
 
-    
 </body>
 </html>

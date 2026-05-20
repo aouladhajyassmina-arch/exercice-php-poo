@@ -1,4 +1,3 @@
-
 <?php
 class Voiture {
     protected $marque;
@@ -13,11 +12,6 @@ class Voiture {
         echo "<p><strong>Marque:</strong> $this->marque</p>";
         echo "<p><strong>Modèle:</strong> $this->modele</p>";
     }
-
-    // ✅ correction هنا
-    public static function message() {
-        echo "Bienvenue dans le garage 🚗";
-    }
 }
 
 class VoitureSport extends Voiture {
@@ -31,21 +25,22 @@ class VoitureSport extends Voiture {
     public function afficher() {
         echo "<div class='card'>";
         echo "<h2>Voiture Sport 🚗</h2>";
-
+        
         parent::afficher();
-
+        
         echo "<p><strong>Vitesse Max:</strong> $this->vitesseMax km/h</p>";
         echo "</div>";
     }
 }
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+<meta charset="UTF-8">
+<title>Voiture Sport</title>
+
+<style>
 body {
     font-family: Arial, sans-serif;
     background: #eef2f3;
@@ -76,15 +71,10 @@ body {
 }
 </style>
 </head>
+
 <body>
 
-<h3>Exercice 2 atelier 6</h3>
-
 <?php
-// appel static
-Voiture::message();
-
-// object
 $v = new VoitureSport("BMW", "M3", 250);
 $v->afficher();
 ?>

@@ -1,30 +1,22 @@
-
 <?php
 class Voiture {
-    private $marque, $modele;
 
-    public function __construct($m,$mo) {
-        $this->marque = $m;
-        $this->modele = $mo;
-    }
-
-    public function afficher() {
-        echo "$this->marque $this->modele <br>";
-    }
-
-    // ✅ méthode statique
     public static function message() {
-        return "Bienvenue dans le garage 🚗";
+        echo "<div class='message-box'>
+                <h1>🚗 Bienvenue</h1>
+                <p>Bienvenue dans le garage</p>
+              </div>";
     }
 }
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+<meta charset="UTF-8">
+<title>Garage</title>
+
+<style>
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #4facfe, #00f2fe);
@@ -55,21 +47,12 @@ body {
 }
 </style>
 </head>
+
 <body>
 
-<div class="message-box">
-    <h3>Exercice 1 atelier 6</h3>
+<?php
+Voiture::message();
+?>
 
-    <p>
-        <?php echo Voiture::message(); ?>
-    </p>
-
-    <?php
-    $v1 = new Voiture("Toyota", "Corolla");
-    $v1->afficher();
-    ?>
-</div>
-
-    
 </body>
 </html>
