@@ -585,7 +585,7 @@ li {
         <h3>Séance atelier 6</h3>
         <a href="exercice1at6.php">Voir exercice 1</a>
         <a href="r10.pdf">Voir rapport</a>
-         <a href="https://github.com/aouladhajyassmina-arch/atelier6.git">Repo GitHub</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier-6.git">Repo GitHub</a>
       </div>
       <div class="card">
         <h3>Séance atelier 6</h3>
@@ -674,6 +674,39 @@ li {
        
         <a href="">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier-12.git">Repo GitHub</a>
+      </div>
+       <!-- ATELIER 13 -->
+    </div>
+     <button onclick="toggleAtelier('atelier13')">Atelier 13</button>
+
+  <div class="grid atelier1 hidden">
+     <div class="card">
+        <h3>Séance atelier 13</h3>
+       
+        <a href="">Voir rapport</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier-13.git">Repo GitHub</a>
+      </div>
+        <!-- ATELIER 14 -->
+    </div>
+     <button onclick="toggleAtelier('atelier14')">Atelier 14</button>
+
+  <div class="grid atelier1 hidden">
+     <div class="card">
+        <h3>Séance atelier 14</h3>
+       
+        <a href="">Voir rapport</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier-14.git">Repo GitHub</a>
+      </div>
+       <!-- ATELIER 15 -->
+    </div>
+     <button onclick="toggleAtelier('atelier15')">Atelier 15</button>
+
+  <div class="grid atelier1 hidden">
+     <div class="card">
+        <h3>Séance atelier 15</h3>
+       
+        <a href="">Voir rapport</a>
+         <a href="https://github.com/aouladhajyassmina-arch/atelier-15.git">Repo GitHub</a>
       </div>
       </section>
  
