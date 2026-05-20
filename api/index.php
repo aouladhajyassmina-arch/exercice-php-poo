@@ -626,7 +626,7 @@ li {
      <div class="card">
         <h3>Séance atelier 8</h3>
         
-        <a href="r15.pdf">Voir rapport</a>
+        <a href="rapat8.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier-8.git">Repo GitHub</a>
       </div>
        <!-- ATELIER 9 -->
@@ -637,7 +637,7 @@ li {
      <div class="card">
         <h3>Séance atelier 9</h3>
        
-        <a href="">Voir rapport</a>
+        <a href="rapat9.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier-9.git">Repo GitHub</a>
       </div>
       
@@ -649,7 +649,7 @@ li {
      <div class="card">
         <h3>Séance atelier 10</h3>
        
-        <a href="">Voir rapport</a>
+        <a href="rapat10.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier-10.git">Repo GitHub</a>
       </div>
       
@@ -661,7 +661,7 @@ li {
      <div class="card">
         <h3>Séance atelier 11</h3>
        
-        <a href="">Voir rapport</a>
+        <a href="rapat11.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier-11.git">Repo GitHub</a>
       </div>
       <!-- ATELIER 12 -->
@@ -672,7 +672,7 @@ li {
      <div class="card">
         <h3>Séance atelier 12</h3>
        
-        <a href="">Voir rapport</a>
+        <a href="rapat12.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier-12.git">Repo GitHub</a>
       </div>
        <!-- ATELIER 13 -->
@@ -683,7 +683,7 @@ li {
      <div class="card">
         <h3>Séance atelier 13</h3>
        
-        <a href="">Voir rapport</a>
+        <a href="rapat13.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier-13.git">Repo GitHub</a>
       </div>
         <!-- ATELIER 14 -->
@@ -694,7 +694,7 @@ li {
      <div class="card">
         <h3>Séance atelier 14</h3>
        
-        <a href="">Voir rapport</a>
+        <a href="rapat14.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier-14.git">Repo GitHub</a>
       </div>
        <!-- ATELIER 15 -->
@@ -705,7 +705,7 @@ li {
      <div class="card">
         <h3>Séance atelier 15</h3>
        
-        <a href="">Voir rapport</a>
+        <a href="rapat15.pdf">Voir rapport</a>
          <a href="https://github.com/aouladhajyassmina-arch/atelier-15.git">Repo GitHub</a>
       </div>
       </section>
